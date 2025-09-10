@@ -46,6 +46,8 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  font-size: 16px;
+  line-height: 1.6;
   overflow-x: hidden;
   max-width: 100vw;
   box-sizing: border-box;
@@ -78,7 +80,8 @@ a:hover {
 }
 
 .section p {
-  line-height: 35px;
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
 /* هالة المجرّات */
@@ -2269,6 +2272,27 @@ section {
   animation: grainShift 12s linear infinite;
 }
 
+/* ===== RESPONSIVE FONT SIZING ===== */
+
+/* Large screens - ensure proper scaling */
+@media (min-width: 1200px) {
+  .space-h1,
+  .space-h1-lavender,
+  .space-h1-cyan,
+  .space-h1-magenta,
+  .space-h1-gold,
+  .space-h1-lime {
+    font-size: clamp(2.5rem, 3vw, 4rem);
+  }
+
+  .section p,
+  .card-body p,
+  .experiences-container p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+}
+
 /* ===== MOBILE RESPONSIVE HEADINGS ===== */
 @media (max-width: 768px) {
   /* Hero section headings */
@@ -2287,46 +2311,59 @@ section {
   .space-h1-magenta,
   .space-h1-gold,
   .space-h1-lime {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
   }
 
   .space-h2 {
-    font-size: 1.75rem;
+    font-size: clamp(1.25rem, 3.5vw, 2rem);
   }
 
   .space-h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 3vw, 1.75rem);
   }
 
   .space-h4 {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
   }
 
   .space-h5 {
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 2.2vw, 1.25rem);
   }
 
   .space-h6 {
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 2vw, 1.1rem);
+  }
+
+  /* Paragraph and body text */
+  .section p,
+  .card-body p,
+  .experiences-container p {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    line-height: 1.5;
   }
 
   /* Card titles */
   .card-title {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
   }
 
   .card-subtitle {
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 2.2vw, 1rem);
   }
 
   /* Experience headings */
   .experiences-container h4 {
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1.25rem);
   }
 
   /* Timeline content headings */
   .timeline-content h6 {
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 2.2vw, 1rem);
+  }
+
+  /* Badge text */
+  .badge {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
   }
 }
 
@@ -2346,34 +2383,48 @@ section {
   .space-h1-magenta,
   .space-h1-gold,
   .space-h1-lime {
-    font-size: 1.75rem;
+    font-size: clamp(1.25rem, 3.5vw, 2rem);
   }
 
   .space-h2 {
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 3vw, 1.75rem);
   }
 
   .space-h3 {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
   }
 
   .space-h4 {
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 2.2vw, 1.25rem);
   }
 
   .space-h5 {
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 2vw, 1.1rem);
   }
 
   .space-h6 {
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 1.8vw, 1rem);
+  }
+
+  /* Paragraph and body text - smaller on very small screens */
+  .section p,
+  .card-body p,
+  .experiences-container p {
+    font-size: clamp(0.8rem, 2.2vw, 0.95rem);
+    line-height: 1.4;
   }
 
   .card-title {
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1.25rem);
   }
 
   .card-subtitle {
-    font-size: 0.85rem;
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+  }
+
+  /* Badge text - smaller on very small screens */
+  .badge {
+    font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+    padding: 0.4rem 0.8rem;
   }
 }
