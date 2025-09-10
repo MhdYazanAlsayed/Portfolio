@@ -31,19 +31,7 @@
   </head>
   <body>
 
-    <!-- طبقة نجوم خلفية -->
-    <canvas
-      id="stars-back"
-      class="stars stars--back"
-      aria-hidden="true"
-    ></canvas>
-
-    <!-- طبقة نجوم أمامية -->
-    <canvas
-      id="stars-front"
-      class="stars stars--front"
-      aria-hidden="true"
-    ></canvas>
+    <!-- Stars removed for performance optimization -->
   
     <!-- Background Effects -->
     <div class="bg">
@@ -707,30 +695,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
     <script src="../../js/main.js"></script>
     <script>
-      // Debug: Check if stars are working
-      document.addEventListener('DOMContentLoaded', function() {
-        console.log('QServs page loaded');
-        const backCanvas = document.getElementById('stars-back');
-        const frontCanvas = document.getElementById('stars-front');
-        console.log('Back canvas:', backCanvas);
-        console.log('Front canvas:', frontCanvas);
-        
-        if (backCanvas && frontCanvas) {
-          console.log('Canvas elements found, stars should be working');
-          
-          // Test: Draw some simple stars manually
-          setTimeout(() => {
-            const ctx = backCanvas.getContext('2d');
-            ctx.fillStyle = '#ffffff';
-            ctx.beginPath();
-            ctx.arc(100, 100, 2, 0, Math.PI * 2);
-            ctx.fill();
-            console.log('Test star drawn');
-          }, 1000);
-        } else {
-          console.error('Canvas elements not found!');
-        }
-      });
+      // Stars removed for performance optimization
 
       // Copy code function
       function copyCode(index) {
