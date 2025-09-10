@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚀 Yazan Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <!-- Temporary debug styles -->
+    <style>
+      .stars {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: -1 !important;
+        pointer-events: none !important;
+        background: rgba(255, 0, 0, 0.1) !important; /* Temporary red background to see if canvas is there */
+      }
+    </style>
+    <!-- Prism.js for syntax highlighting -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <!-- طبقة نجوم خلفية -->
+    <canvas
+      id="stars-back"
+      class="stars stars--back"
+      aria-hidden="true"
+    ></canvas>
+
+    <!-- طبقة نجوم أمامية -->
+    <canvas
+      id="stars-front"
+      class="stars stars--front"
+      aria-hidden="true"
+    ></canvas>
+  
+    <!-- Background Effects -->
+    <div class="bg">
+      <div class="aurora"></div>
+      <div class="glows">
+        <div class="glow g1"></div>
+        <div class="glow g2"></div>
+        <div class="glow g3"></div>
+      </div>
+      <div class="grain"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container pt-5">
+      <!-- Experience Header -->
+      <div class="experience-header">
+        <div class="mb-4">
+          <div>
+            <h1 class="space-h6 mb-3 text-start fs-1">Qservs</h1>
+          </div>
+          <div class="mb-4">
+            <span class="badge badge-cyan">Full Stack Web Developer</span>
+            <span class="badge badge-gold">Saudi Arabia</span>
+            <span class="badge badge-magenta">FullTime</span>
+            <span class="badge badge-lime">2022 - 2024</span>
+          </div>
+          <div>
+            <a href="../index.html" class="btn-lavender">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Content -->
+      <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-12">
+          <!-- Overview -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-info-circle"></i> Project Details
+              </h3>
+            </div>
+            <div class="card-body">
+              <article
+                id="tab-en"
+                class="qsv-lang ltr"
+                role="tabpanel"
+                aria-labelledby="tab-en-btn"
+              >
+                <div class="qsv-section">
+                  <h3>Overview</h3>
+                  <p>
+                    <strong>Qservs</strong> delivers integrated software
+                    solutions for the <strong>fuel station</strong> sector, with
+                    a special focus on <strong>station automation</strong>. The
+                    goal is to minimize human intervention in recording
+                    operations, revenues, and audits to reduce errors and
+                    prevent intentional misuse.
+                  </p>
+                  <p>
+                    The system integrates a <strong>PTS-Controller</strong>—the
+                    station’s “brain”—connected to tank, pump, and nozzle
+                    sensors. It detects changes and streams accurate data via
+                    <strong>APIs</strong> for processing, secure storage, and
+                    clear business visualization.
+                  </p>
+                </div>
+
+                <div class="qsv-section">
+                  <h3>Why a Redesign?</h3>
+                  <p>
+                    At <strong>QServs</strong>, they deliver the product to each customer with the source code. This is truly strange to me.
+                    <br />
+                    There are several problems associated with this. I'll mention a few :
+                  </p>
+                  <ul class="qsv-list">
+                    <li>
+                      The customer won't receive any updates automatically; they'll have to contact the company to inquire about new updates.
+                      <br />
+                      What if a security issue occurs and the company delays providing the update?
+                      <br />
+                      That customer's data will be at risk.
+                    </li>
+                    <li>
+                      <strong>QServs</strong> will lose time and cost updating customer systems.
+                      <br />
+                      Imagine we have 50 gas stations. How long would it take to update all these systems? And how many employees would we need? This will cost us because we'll waste time and force our employees to do something instead of fixing bugs and problems!
+                    </li>
+                    <li>
+                      The customer might steal the source code and sell our product!.
+                    </li>
+                    <li>
+                      The customer must spend a lot of money to acquire this system, and they must spend money to host it.
+                    </li>
+                    <li>
+                      The customer cannot scale this system if the data becomes too large with use over time.
+                    </li>
+                    <li>
+                      The customer cannot protect their data from loss or corruption.
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="qsv-section">
+                  <h3>What is the Solution ?</h3>
+
+                  <p>
+                    I rebuilt the architecture from scratch, adopting
+                    <strong>Multi-Tenancy</strong> with
+                    <strong>separate databases</strong> to ensure performance,
+                    isolation, and data privacy.
+                  </p>
+                  <p>
+                    This way solved all problems mentioned above. 
+                    In addition, the customer won't incur exorbitant costs for the service; they only need to pay a monthly or annual subscription. This also provides a lasting benefit for the company. The company can control product quality and update security issues at once for all customers. This increases customer confidence and attracts more customers.
+                  </p>
+                </div>
+
+                <div class="qsv-section">
+                  <h3>Tech & Capabilities</h3>
+                  <div class="qsv-kv">
+                    <p>
+                      • Front-end: <strong>React.js</strong> for a fast, smooth
+                      UX (internal system; SEO not required).
+                    </p>
+                    <p>
+                      • Reporting: rich dashboards—fuel sales, per-station
+                      revenue, employee/nozzle performance, payment mix, tank
+                      refills.
+                    </p>
+                    <p>
+                      • Administration: create/configure stations, manage users,
+                      and assign granular permissions.
+                    </p>
+                    <p>
+                      • Security: strict controls prevent cross-tenant data
+                      access—even with a valid <strong>Access Token</strong>.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="qsv-section">
+                  <h3>My Role</h3>
+                  <p>
+                    The solution was <strong>entirely built by me</strong>—from
+                    architectural redesign to implementation, reporting, and
+                    security hardening. I cannot share the full source code, but
+                    I can provide meaningful excerpts upon request.
+                  </p>
+                </div>
+
+                <div class="qsv-footer">
+                  Principle: solve the right problem first; let code and tools
+                  serve scalable, long-term value.
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Code Snippets -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-code"></i> Code Highlights
+              </h3>
+              <p class="card-subtitle">
+                Key code snippets from this experience
+              </p>
+            </div>
+            <div class="card-body">
+                <!-- Tanent Middleware -->
+                <div class="code-snippet code-snippet-lg mb-4">
+                    <div class="code-snippet-header">
+                        <h5 class="mb-2">
+                        <i class="fas fa-code"></i> TenantMiddleware.cs
+                    </h5>
+                    <div class="text-muted mb-3">
+                        <p class="mb-1">
+                            The middleware that responsible check the tanent id. 
+                        </p>
+                        <p class="mb-1">
+                            This middleware is very important for make system knows the right database of tenant.
+                        </p>
+                        <p>
+                            NOTE : This a MVP product, Later we had to check tenants from configs db not from json file.
+                        </p>
+                    </div>
+                    </div>
+                    <div class="code-snippet-body">
+                        <div class="code-toolbar">
+                        <span class="language-badge badge badge-cyan">C#</span>
+                        <button
+                            class="btn btn-sm btn-outline-light copy-btn"
+                            onclick="copyCode(0)"
+                        >
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                        </div>
+                        <pre
+                        class="line-numbers"
+                        ><code class="language-csharp">
+
+    public class TenantMiddleware
+    {
+        private readonly RequestDelegate _next;
+        private readonly TenantConfiguration _configuration;
+        private const string TenantIdHeader = "X-Tenant-ID";
+        private const string TenantIdQueryParam = "tenantId";
+        private const string TenantIdClaimType = "TenantId";
+        private const string TenantIdItemKey = "TenantId";
+
+        public TenantMiddleware(RequestDelegate next, TenantConfiguration configuration)
+        {
+            _next = next ?? throw new ArgumentNullException(nameof(next));
+            _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+        }
+
+        public async Task InvokeAsync(HttpContext context)
+        {
+            try
+            {
+                var tenantId = ExtractTenantId(context);
+                if (string.IsNullOrWhiteSpace(tenantId))
+                {
+                    await ReturnErrorResponse(context, StatusCodes.Status400BadRequest, "TenantId is required");
+                    return;
+                }
+
+                var tenant = ValidateTenant(tenantId);
+                if (tenant is null)
+                {
+                    await ReturnErrorResponse(context, StatusCodes.Status404NotFound, $"Tenant '{tenantId}' not found");
+                    return;
+                }
+
+                if (!ValidateTenantClaim(context, tenantId))
+                {
+                    await ReturnErrorResponse(context, StatusCodes.Status403Forbidden, "Tenant access denied");
+                    return;
+                }
+
+                SetTenantContext(context, tenantId);
+                await _next(context);
+            }
+            catch (Exception ex)
+            {
+                await ReturnErrorResponse(context, StatusCodes.Status500InternalServerError, "An error occurred while processing tenant information");
+            }
+        }
+
+        private string? ExtractTenantId(HttpContext context)
+        {
+            // Try to get tenant ID from header first
+            var tenantId = context.Request.Headers[TenantIdHeader].FirstOrDefault();
+            
+            // If not found in header, try query parameter
+            if (string.IsNullOrWhiteSpace(tenantId))
+            {
+                tenantId = context.Request.Query[TenantIdQueryParam].FirstOrDefault();
+            }
+
+            return tenantId;
+        }
+
+        private TenantItem? ValidateTenant(string tenantId)
+        {
+            return _configuration.Tenants.FirstOrDefault(x => 
+                string.Equals(x.TenantId, tenantId, StringComparison.OrdinalIgnoreCase));
+        }
+
+        private bool ValidateTenantClaim(HttpContext context, string tenantId)
+        {
+            var tenantClaim = context.User.Claims.FirstOrDefault(x => 
+                string.Equals(x.Type, TenantIdClaimType, StringComparison.OrdinalIgnoreCase));
+
+            // If no claim exists, allow the request (for unauthenticated endpoints)
+            if (tenantClaim is null)
+                return true;
+
+            // If claim exists, it must match the tenant ID
+            return string.Equals(tenantClaim.Value, tenantId, StringComparison.OrdinalIgnoreCase);
+        }
+
+        private void SetTenantContext(HttpContext context, string tenantId)
+        {
+            context.Items[TenantIdItemKey] = tenantId;
+        }
+
+        private async Task ReturnErrorResponse(HttpContext context, int statusCode, string message)
+        {
+            context.Response.StatusCode = statusCode;
+            context.Response.ContentType = "application/json";
+            
+            var errorResponse = new
+            {
+                Success = false,
+                Message = message,
+                StatusCode = statusCode,
+                Timestamp = DateTime.UtcNow
+            };
+
+            await context.Response.WriteAsJsonAsync(errorResponse);
+        }
+    }
+                    
+                        </code></pre>
+                    </div>
+                </div>
+
+                <!-- Context Factory -->
+                <div class="code-snippet code-snippet-lg mb-4">
+                    <div class="code-snippet-header">
+                        <h5 class="mb-2">
+                        <i class="fas fa-code"></i> ContextFactoryService.cs
+                        </h5>
+                        <p class="text-muted mb-3">
+                        The service that responsible for create the appropriate DbContext for a tenant
+                        </p>
+                    </div>
+                    <div class="code-snippet-body">
+                        <div class="code-toolbar">
+                        <span class="language-badge badge badge-cyan">C#</span>
+                        <button
+                            class="btn btn-sm btn-outline-light copy-btn"
+                            onclick="copyCode(1)"
+                        >
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                        </div>
+                        <pre
+                        class="line-numbers"
+                        ><code class="language-csharp">
+    public class ContextFactoryService : IContextFactory<FuelMasterDbContext>
+    {
+        private readonly TenantConfiguration _configuration;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private FuelMasterDbContext? _context;
+
+        public ContextFactoryService(TenantConfiguration configuration , 
+            IHttpContextAccessor httpContextAccessor)
+        {
+            _configuration = configuration;
+            _httpContextAccessor = httpContextAccessor;
+        }
+
+        public FuelMasterDbContext CurrentContext => 
+            (_context ?? (_context = CreateDbContext()));
+
+        // Returns new context with store it .
+        public FuelMasterDbContext CreateDbContext()
+        {
+            var httpContext = _httpContextAccessor.HttpContext;
+            if (httpContext!.Items.TryGetValue("TenantId", out var tenantId))
+            {
+                if (tenantId is null || string.IsNullOrEmpty(tenantId.ToString()))
+                    throw new NullReferenceException("tenantId was not found .");
+
+                var connectionString = GetConnectionStringForTenant(tenantId.ToString()!);
+                if (connectionString is null)
+                    throw new NullReferenceException("Cannot find a connection string for this tenant .");
+
+                var optionsBuilder = new DbContextOptionsBuilder<FuelMasterDbContext>();
+                optionsBuilder.UseSqlServer(connectionString);
+                var context = new FuelMasterDbContext(optionsBuilder.Options);
+                _context = context;
+                return context;
+            }
+
+            throw new InvalidOperationException("Tenant ID not found in request header.");
+        }
+
+        // Returns new context without store it .
+        public FuelMasterDbContext CreateDbContext(string tenantId)
+        {
+            var connectionString = GetConnectionStringForTenant(tenantId.ToString()!);
+            if (connectionString is null)
+                throw new NullReferenceException("Cannot find a connection string for this tenant .");
+
+            var optionsBuilder = new DbContextOptionsBuilder<FuelMasterDbContext>();
+            optionsBuilder.UseSqlServer(connectionString);
+
+            return new FuelMasterDbContext(optionsBuilder.Options);
+        }
+
+        private string? GetConnectionStringForTenant(string tenantId)
+        {
+            var tenantSetting = _configuration.Tenants.FirstOrDefault(x => x.TenantId == tenantId);
+
+            if (tenantSetting is null)
+                throw new Exception($"Cannot find tenant setting for '{tenantId}'");
+
+            return tenantSetting.ConnectionString;
+        }
+
+    }
+                        </code></pre>
+                    </div>
+                </div>
+
+                <!-- TransactionService -->
+                <div class="code-snippet code-snippet-lg mb-4">
+                    <div class="code-snippet-header">
+                    <h5 class="mb-2">
+                        <i class="fas fa-code"></i> TransactionService.cs
+                    </h5>
+                    <p class="text-muted mb-3">
+                        The service that responsible for recording and retrive sales
+                        transactions
+                    </p>
+                    </div>
+                    <div class="code-snippet-body">
+                    <div class="code-toolbar">
+                        <span class="language-badge badge badge-cyan">C#</span>
+                        <button
+                        class="btn btn-sm btn-outline-light copy-btn"
+                        onclick="copyCode(2)"
+                        >
+                        <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                    <pre
+                        class="line-numbers"
+                    ><code class="language-csharp">
+
+    public class TransactionService : ITransactionService
+    {
+        private readonly FuelMasterDbContext _context;
+
+        public TransactionService(IContextFactory<FuelMasterDbContext> contextFactory)
+        {
+            /* 
+            IContextFactory can create a DbContext for a tanent 
+            by a value that is present in the HttpRequest header. 
+            */
+            _context = contextFactory.CurrentContext;
+        }
+
+        public async Task<ResultDto<Transaction>> CreateAsync(CreateTransactionDto dto)
+        {
+            var tank = await GetTankAsync(dto.TankId);
+            if (tank is null)
+                return Results.Failure<Transaction>();
+
+            using var transaction = _context.Database.BeginTransaction();
+
+            try 
+            {
+                var _transaction = CreateTransactionEntity(dto, tank.StationId);
+                await _context.Transactions.AddAsync(_transaction);
+                await _context.SaveChangesAsync();
+
+                await UpdateNozzleAsync(dto.NozzleId, dto.Volume, dto.Amount);
+
+                await transaction.CommitAsync();
+                return Results.Success(_transaction);
+            }
+            catch 
+            {
+                await transaction.RollbackAsync();
+                return Results.Failure<Transaction>();
+            }
+        }
+
+        public async Task<CreateManuallyResponse> CreateManuallyAsync(CreateManuallyTransactionDto dto)
+        {
+            // Validate nozzle
+            var nozzleValidation = await ValidateNozzleAsync(dto);
+            if (!nozzleValidation.IsValid)
+            {
+                return CreateErrorResponse(nozzleValidation.Errors);
+            }
+
+            // Validate zone prices
+            var zonePriceValidation = ValidateZonePrices(nozzleValidation.Nozzle!);
+            if (!zonePriceValidation.IsValid)
+            {
+                return CreateErrorResponse(zonePriceValidation.Errors);
+            }
+
+            // Validate employee
+            var employeeValidation = await ValidateEmployeeAsync(dto, nozzleValidation.Nozzle!);
+            if (!employeeValidation.IsValid)
+            {
+                return CreateErrorResponse(employeeValidation.Errors);
+            }
+
+            // Validate tank volume
+            var tankValidation = ValidateTankVolume(nozzleValidation.Nozzle!, dto.Volume);
+            if (!tankValidation.IsValid)
+            {
+                return CreateErrorResponse(tankValidation.Errors);
+            }
+
+            return await ProcessManualTransactionAsync(dto, nozzleValidation.Nozzle!, zonePriceValidation.ZonePrice!, employeeValidation.Employee!);
+        }
+
+        public async Task<PaginationDto<Transaction>> GetPaginationAsync(GetTransactionPaginationDto dto, bool includePump = false)
+        {
+            var from = dto.From ?? DateTimeCulture.Now.AddDays(-1);
+            var to = dto.To ?? DateTimeCulture.Now;
+
+            IQueryable<Transaction> query = BuildTransactionQuery(includePump);
+
+            return await query
+                .Where(x => !dto.StationId.HasValue || x.StationId == dto.StationId)
+                .Where(x => !dto.NozzleId.HasValue || x.NozzleId == dto.NozzleId)
+                .Where(x => !dto.EmployeeId.HasValue || x.EmployeeId == dto.EmployeeId)
+                .Where(x => x.CreatedAt >= from && x.CreatedAt <= to)
+                .ToPaginationAsync(dto.Page);
+        }
+
+        #region Private Methods
+
+        private async Task<Tank?> GetTankAsync(int tankId)
+        {
+            return await _context.Tanks.SingleOrDefaultAsync(x => x.Id == tankId);
+        }
+
+        private Transaction CreateTransactionEntity(CreateTransactionDto dto, int stationId)
+        {
+            return new Transaction(
+                dto.UId,
+                dto.PaymentMethod,
+                dto.Price,
+                dto.NozzleId,
+                dto.Amount,
+                dto.Volume,
+                dto.EmployeeId,
+                dto.TotalVolume,
+                dto.TotalVolume + dto.Volume,
+                stationId,
+                dto.DateTime
+            );
+        }
+
+        private async Task UpdateNozzleAsync(int nozzleId, decimal volume, decimal amount)
+        {
+            var nozzle = await _context.Nozzles.SingleAsync(x => x.Id == nozzleId);
+            nozzle.Volume += volume;
+            nozzle.Amount += amount;
+        }
+
+        private async Task<NozzleValidationResult> ValidateNozzleAsync(CreateManuallyTransactionDto dto)
+        {
+            var nozzle = await _context.Nozzles
+                .Include(x => x.Tank)
+                .ThenInclude(x => x!.Station)
+                .ThenInclude(x => x!.Zone)
+                .ThenInclude(x => x!.Prices)
+                .SingleOrDefaultAsync(x => x.Number == dto.NozzleNumber && x.Tank!.StationId == dto.StationId);
+
+            if (nozzle is null)
+            {
+                return new NozzleValidationResult
+                {
+                    IsValid = false,
+                    Errors = new List<string> { Resource.NozzleNotFound }
+                };
+            }
+
+            if (nozzle.Status == NozzleStatus.Disabled)
+            {
+                return new NozzleValidationResult
+                {
+                    IsValid = false,
+                    Errors = new List<string> { Resource.NozzleDisabled }
+                };
+            }
+
+            return new NozzleValidationResult
+            {
+                IsValid = true,
+                Nozzle = nozzle
+            };
+        }
+
+        private ZonePriceValidationResult ValidateZonePrices(Nozzle nozzle)
+        {
+            if (nozzle.Tank?.Station?.Zone?.Prices is null)
+            {
+                return new ZonePriceValidationResult
+                {
+                    IsValid = false,
+                    Errors = new List<string> { Resource.ZonePricesNotFound }
+                };
+            }
+
+            var zonePrice = nozzle.Tank.Station.Zone.Prices
+                .SingleOrDefault(x => x.FuelType == nozzle.Tank.FuelType);
+
+            if (zonePrice is null)
+            {
+                return new ZonePriceValidationResult
+                {
+                    IsValid = false,
+                    Errors = new List<string> { Resource.ZonePricesNotFound }
+                };
+            }
+
+            return new ZonePriceValidationResult
+            {
+                IsValid = true,
+                ZonePrice = zonePrice
+            };
+        }
+
+        private async Task<EmployeeValidationResult> ValidateEmployeeAsync(CreateManuallyTransactionDto dto, Nozzle nozzle)
+        {
+            var employee = await _context.Employees
+                .Include(x => x.User)
+                .SingleOrDefaultAsync(x => x.CardNumber == dto.EmployeeCardNumber);
+
+            if (employee is null || employee.StationId is null || employee.User is null || !employee.User!.IsActive)
+            {
+                return new EmployeeValidationResult
+                {
+                    IsValid = false,
+                    Errors = new List<string> { Resource.EmployeeNotFound }
+                };
+            }
+
+            if (employee.StationId != nozzle.Tank!.StationId)
+            {
+                return new EmployeeValidationResult
+                {
+                    IsValid = false,
+                    Errors = new List<string> { Resource.EmployeeNotInStation }
+                };
+            }
+
+            return new EmployeeValidationResult
+            {
+                IsValid = true,
+                Employee = employee
+            };
+        }
+
+        private TankVolumeValidationResult ValidateTankVolume(Nozzle nozzle, decimal volume)
+        {
+            if (nozzle.Tank!.CurrentVolume - volume < nozzle.Tank.MinLimit)
+            {
+                return new TankVolumeValidationResult
+                {
+                    IsValid = false,
+                    Errors = new List<string> { Resource.TankHasNoFuelEnough }
+                };
+            }
+
+            return new TankVolumeValidationResult
+            {
+                IsValid = true
+            };
+        }
+
+        private CreateManuallyResponse CreateErrorResponse(List<string> errors)
+        {
+            return new CreateManuallyResponse
+            {
+                Succeeded = false,
+                Messages = errors
+            };
+        }
+
+        private async Task<CreateManuallyResponse> ProcessManualTransactionAsync(
+            CreateManuallyTransactionDto dto, 
+            Nozzle nozzle, 
+            ZonePrice zonePrice, 
+            Employee employee)
+        {
+            using var transaction = _context.Database.BeginTransaction();
+
+            try 
+            {
+                var _transaction = CreateManualTransactionEntity(dto, nozzle, zonePrice, employee);
+                await _context.Transactions.AddAsync(_transaction);
+
+                await UpdateNozzleAndTankAsync(nozzle, dto.Volume, zonePrice.Price);
+
+                await _context.SaveChangesAsync();
+                await transaction.CommitAsync();
+
+                return new CreateManuallyResponse
+                {
+                    Succeeded = true,
+                    Messages = new List<string>(),
+                    Entity = _transaction
+                };
+            }
+            catch 
+            {
+                await transaction.RollbackAsync();
+                return new CreateManuallyResponse
+                {
+                    Succeeded = false,
+                    Messages = new List<string>() { Resource.SthWentWrong }
+                };
+            }
+        }
+
+        private Transaction CreateManualTransactionEntity(
+            CreateManuallyTransactionDto dto, 
+            Nozzle nozzle, 
+            ZonePrice zonePrice, 
+            Employee employee)
+        {
+            return new Transaction(
+                Guid.NewGuid().ToString(),
+                dto.PaymentMethod,
+                zonePrice.Price,
+                nozzle.Id,
+                zonePrice.Price * dto.Volume,
+                dto.Volume,
+                employee.Id,
+                nozzle.Totalizer,
+                nozzle.Totalizer + dto.Volume,
+                nozzle.Tank!.StationId,
+                DateTimeCulture.Now
+            );
+        }
+
+        private async Task UpdateNozzleAndTankAsync(Nozzle nozzle, decimal volume, decimal price)
+        {
+            var today = DateTimeCulture.Now.Date;
+            var tomorrow = today.AddDays(1).Date;
+            var nozzleHistory = await _context.NozzleHistories
+            .Where(x => x.CreatedAt >= today && x.CreatedAt < tomorrow)
+            .SingleOrDefaultAsync();
+
+            if (nozzleHistory is null)
+            {
+                nozzleHistory = new NozzleHistory(nozzle.Id, nozzle.Volume + volume, nozzle.Amount + price * volume, nozzle.Tank!.StationId, nozzle.Tank!.Id);
+                await _context.NozzleHistories.AddAsync(nozzleHistory);
+            }
+            else 
+            {
+                nozzleHistory.Volume += volume;
+                nozzleHistory.Amount += price * volume;
+                _context.Update(nozzleHistory);
+            }
+
+            nozzle.Volume += volume;
+            nozzle.Amount += price * volume;
+            nozzle.Totalizer += volume;
+            nozzle.Tank!.CurrentVolume -= volume;
+
+            _context.Update(nozzle);
+        }
+
+        private IQueryable<Transaction> BuildTransactionQuery(bool includePump)
+        {
+            IQueryable<Transaction> query = _context.Transactions;
+
+            query = query
+                .Include(x => x.Nozzle)
+                .ThenInclude(x => x!.Tank)
+                .Include(x => x.Employee)
+                .Include(x => x.Station);
+
+            if (includePump)
+                query = query.Include(x => x.Nozzle!.Pump);
+
+            return query;
+        }
+
+        #endregion
+
+        #region Validation Result Classes
+
+        private class NozzleValidationResult
+        {
+            public bool IsValid { get; set; }
+            public List<string> Errors { get; set; } = new();
+            public Nozzle? Nozzle { get; set; }
+        }
+
+        private class ZonePriceValidationResult
+        {
+            public bool IsValid { get; set; }
+            public List<string> Errors { get; set; } = new();
+            public ZonePrice? ZonePrice { get; set; }
+        }
+
+        private class EmployeeValidationResult
+        {
+            public bool IsValid { get; set; }
+            public List<string> Errors { get; set; } = new();
+            public Employee? Employee { get; set; }
+        }
+
+        private class TankVolumeValidationResult
+        {
+            public bool IsValid { get; set; }
+            public List<string> Errors { get; set; } = new();
+        }
+
+        #endregion
+    }
+                    </code></pre>
+                    </div>
+                </div>
+
+            </div>
+          </div>
+
+          <!-- Technical Achievements -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-trophy"></i> Technical Achievements
+              </h3>
+            </div>
+            <div class="card-body">
+              <!-- Achievement 1 -->
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">Architecture Redesign</h5>
+                    <p class="mb-0 text-muted">Transformed the system from standalone installations into a Multi-Tenant SaaS platform, enabling easier updates, higher scalability, and better maintainability.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Achievement 2 -->
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">Secure Data Isolation</h5>
+                    <p class="mb-0 text-muted">Implemented database-per-tenant architecture to guarantee performance, privacy, and protection across multiple fuel stations.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Achievement 3 -->
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">Real-Time Device Integration</h5>
+                    <p class="mb-0 text-muted">Built robust APIs to connect with PTS-Controller devices, streaming live data from tanks, pumps, and nozzles directly into the system.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">Advanced Reporting Dashboards</h5>
+                    <p class="mb-0 text-muted">Delivered interactive reports for managers to monitor sales, revenues, employees, nozzles, and payment methods in real time.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">Robust Security Model</h5>
+                    <p class="mb-0 text-muted">Engineered strict role-based access control and tenant-level security, preventing unauthorized cross-company data access even in edge cases.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills Used -->
+          <div class="card mb-4">
+              <div class="card-header">
+              <h3 class="card-title">
+                  <i class="fas fa-tools"></i> Technologies Used
+              </h3>
+              </div>
+              <div class="card-body">
+                <!-- REPLACE THESE WITH YOUR ACTUAL SKILLS -->
+                <span class="badge badge-gold badge-icon">
+                  <i class="fas fa-code"></i> Asp.Net Core
+                </span>
+                <span class="badge badge-magenta badge-icon">
+                    <i class="fas fa-code"></i> C#
+                </span>
+                <span class="badge badge-cyan badge-icon">
+                    <i class="fas fa-database"></i> SqlServer & Ef_Core
+                </span>
+                <span class="badge badge-holographic badge-icon">
+                    <i class="fas fa-rocket"></i> React js 
+                </span>
+              </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                  🚀 Vision for Fuel Station Platform
+              </h3>
+            </div>
+
+            <div class="card-body">
+              <section id="vision-en">
+                <h3 class="mb-4">🌎 Short-Term Vision</h3>
+                <h4>1. Richer Business Insights</h4>
+                <p>Expand reporting with diverse, customizable dashboards that deliver actionable insights for managers and executives.</p>
+              
+                <h4>2. Intelligent Notification System</h4>
+                <p>Implement real-time alerts across in-app notifications, email, and automated phone calls for critical events (e.g., abnormal tank temperatures, sensor failures, nozzle shutdowns) with severity-based escalation from station managers up to executives.</p>
+              
+                <h4>3. Seamless Integrations</h4>
+                <p>Integrate with accounting systems and other enterprise platforms to streamline operations and maintain data consistency.</p>
+              
+                <h4>4. Predictive Analytics with AI</h4>
+                <p>Leverage AI models to forecast high-demand periods (holidays, seasonal peaks) and optimize fuel distribution and staffing.</p>
+              
+                <h4>5. Automated Fuel Reordering</h4>
+                <p>Trigger supplier reorders automatically when inventory reaches defined thresholds to ensure uninterrupted supply.</p>
+              
+                <h4>6. Preventive Maintenance & Operations</h4>
+                <p>Connect with maintenance and cleaning systems to schedule and monitor periodic servicing, reducing downtime and ensuring compliance.</p>
+              
+                <h4>4. Shift Management & Reporting</h4>
+                <p>
+                  Designed and implemented a dedicated <strong>Shift Management System</strong> that allows station administrators to 
+                  create and configure shifts, define working hours, and assign employees accordingly.
+                </p>
+                <p>
+                  The system generates <strong>customized shift reports</strong>, providing detailed insights into employee attendance, 
+                  performance, and compliance with assigned schedules.
+                </p>
+                <p class="mb-5">
+                  To ensure accuracy and accountability, the solution integrates with an <strong>external attendance system</strong> 
+                  that tracks employee check-in and check-out events at the station, enabling reliable validation of shift adherence.
+                </p>
+
+                <hr class="mb-5" />
+
+                <h3 class="mb-4">🌎 Long-Term Vision</h3>
+              
+                <h4>1. Mobile Apps for Management</h4>
+                <p>Provide real-time monitoring and control for managers and staff through dedicated mobile applications.</p>
+              
+                <h4>2. Customer-Facing App</h4>
+                <p>Offer customers a mobile app to view purchase history, responsible employee and station, and access personalized services.</p>
+              </section>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                  🖼️ Pictures of product
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+      // Debug: Check if stars are working
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('QServs page loaded');
+        const backCanvas = document.getElementById('stars-back');
+        const frontCanvas = document.getElementById('stars-front');
+        console.log('Back canvas:', backCanvas);
+        console.log('Front canvas:', frontCanvas);
+        
+        if (backCanvas && frontCanvas) {
+          console.log('Canvas elements found, stars should be working');
+          
+          // Test: Draw some simple stars manually
+          setTimeout(() => {
+            const ctx = backCanvas.getContext('2d');
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.arc(100, 100, 2, 0, Math.PI * 2);
+            ctx.fill();
+            console.log('Test star drawn');
+          }, 1000);
+        } else {
+          console.error('Canvas elements not found!');
+        }
+      });
+
+      // Copy code function
+      function copyCode(index) {
+        const codeElement = document.querySelectorAll(".code-snippet pre code")[
+          index
+        ];
+        const text = codeElement.textContent;
+
+        navigator.clipboard.writeText(text).then(() => {
+          // Show success feedback
+          const button = document.querySelectorAll(".copy-btn")[index];
+          const originalText = button.innerHTML;
+          button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          button.classList.add("btn-success");
+          button.classList.remove("btn-outline-light");
+
+          setTimeout(() => {
+            button.innerHTML = originalText;
+            button.classList.remove("btn-success");
+            button.classList.add("btn-outline-light");
+          }, 2000);
+        });
+      }
+
+      // Initialize Prism.js after DOM is loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        Prism.highlightAll();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚀 Experiences JSON Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Background Effects -->
+    <div class="aurora"></div>
+    <div class="grain"></div>
+
+    <div class="container">
+      <!-- Main Title -->
+      <h1 class="space-h1">🚀 Dynamic Experiences System</h1>
+
+      <!-- How to Use -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">📋 How to Use the JSON System</h3>
+        </div>
+        <div class="card-body">
+          <h4>1. Edit the JSON File</h4>
+          <p>Open <code>experiences.json</code> and modify the data:</p>
+
+          <pre><code>{
+  "experiences": [
+    {
+      "id": 1,
+      "title": "Your Job Title",
+      "company": "Company Name",
+      "location": "Location",
+      "type": "Full Time",
+      "startDate": "2024-01",
+      "endDate": "2024-12",
+      "description": {
+        "about": "Job description...",
+        "skills": [
+          {
+            "name": "Skill Name",
+            "type": "category",
+            "badge": "badge-lavender"
+          }
+        ],
+        "hasMoreInfo": true,
+        "moreInfoLink": "#",
+        "moreInfoText": "Want to know more?"
+      }
+    }
+  ]
+}</code></pre>
+
+          <h4>2. Available Badge Colors</h4>
+          <div class="badge-group">
+            <span class="badge badge-lavender">badge-lavender</span>
+            <span class="badge badge-cyan">badge-cyan</span>
+            <span class="badge badge-gold">badge-gold</span>
+            <span class="badge badge-magenta">badge-magenta</span>
+            <span class="badge badge-lime">badge-lime</span>
+            <span class="badge badge-holographic">badge-holographic</span>
+            <span class="badge badge-neural">badge-neural</span>
+            <span class="badge badge-quantum">badge-quantum</span>
+          </div>
+
+          <h4>3. Date Format</h4>
+          <p>
+            Use <code>YYYY-MM</code> format for dates (e.g., "2024-01",
+            "2024-12")
+          </p>
+
+          <h4>4. Skills Structure</h4>
+          <p>Each skill can have:</p>
+          <ul>
+            <li><strong>name</strong> - The skill name</li>
+            <li>
+              <strong>type</strong> - Category (language, framework, tool, etc.)
+            </li>
+            <li><strong>badge</strong> - Badge color class</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Example JSON -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">💡 Example: Adding a New Experience</h3>
+        </div>
+        <div class="card-body">
+          <p>Here's how to add a new experience to your JSON file:</p>
+
+          <pre><code>{
+  "id": 3,
+  "title": "Senior Full Stack Developer",
+  "company": "TechCorp",
+  "location": "San Francisco, CA",
+  "type": "Full Time",
+  "startDate": "2024-01",
+  "endDate": "present",
+  "description": {
+    "about": "Led development of scalable web applications using modern technologies. Collaborated with cross-functional teams to deliver high-quality software solutions.",
+    "skills": [
+      {
+        "name": "React",
+        "type": "framework",
+        "badge": "badge-cyan"
+      },
+      {
+        "name": "Node.js",
+        "type": "runtime",
+        "badge": "badge-magenta"
+      },
+      {
+        "name": "TypeScript",
+        "type": "language",
+        "badge": "badge-lavender"
+      },
+      {
+        "name": "AWS",
+        "type": "cloud",
+        "badge": "badge-gold"
+      }
+    ],
+    "hasMoreInfo": true,
+    "moreInfoLink": "#details",
+    "moreInfoText": "View detailed project information"
+  }
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">✨ Features</h3>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>
+              🚀 <strong>Dynamic Loading</strong> - Experiences load from JSON
+              file
+            </li>
+            <li>
+              🎨 <strong>Beautiful Styling</strong> - Space theme with
+              animations
+            </li>
+            <li>
+              📱 <strong>Responsive Design</strong> - Works on all devices
+            </li>
+            <li>⚡ <strong>Fast Loading</strong> - Optimized performance</li>
+            <li>
+              🔧 <strong>Easy Management</strong> - Just edit JSON to update
+            </li>
+            <li>🎯 <strong>Badge System</strong> - Colorful skill badges</li>
+            <li>
+              📅 <strong>Date Formatting</strong> - Automatic date display
+            </li>
+            <li>
+              🔗 <strong>More Info Links</strong> - Optional detailed
+              information
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- JavaScript API -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">🔧 JavaScript API</h3>
+        </div>
+        <div class="card-body">
+          <p>The system provides a JavaScript API for advanced usage:</p>
+
+          <pre><code>// Access the experiences manager
+const manager = window.experiencesManager;
+
+// Add a new experience
+manager.addExperience({
+  id: 4,
+  title: "New Job",
+  company: "New Company",
+  // ... other properties
+});
+
+// Update an existing experience
+manager.updateExperience(1, {
+  title: "Updated Title"
+});
+
+// Remove an experience
+manager.removeExperience(1);
+
+// Reload experiences from JSON
+manager.loadExperiences().then(() => {
+  manager.renderExperiences();
+});</code></pre>
+        </div>
+      </div>
+
+      <!-- Live Demo -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">🎮 Live Demo</h3>
+          <p class="card-subtitle">See the experiences loading dynamically</p>
+        </div>
+        <div class="card-body">
+          <p>Click the button below to see the experiences load:</p>
+          <button class="btn-lavender" onclick="loadDemoExperiences()">
+            <i class="fas fa-rocket"></i> Load Experiences Demo
+          </button>
+
+          <div id="demo-experiences" class="mt-4"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./experiences.js"></script>
+    <script>
+      function loadDemoExperiences() {
+        const demoContainer = document.getElementById("demo-experiences");
+        demoContainer.innerHTML =
+          '<div class="experiences-loading"><div class="spinner-border text-primary" role="status"></div><p class="mt-2">Loading demo experiences...</p></div>';
+
+        setTimeout(() => {
+          if (window.experiencesManager) {
+            window.experiencesManager.renderExperiences();
+            demoContainer.innerHTML =
+              '<p class="text-success">✅ Experiences loaded successfully! Check the main page.</p>';
+          } else {
+            demoContainer.innerHTML =
+              '<p class="text-danger">❌ Experiences manager not found.</p>';
+          }
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

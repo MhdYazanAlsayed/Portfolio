@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚀 Yazan Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <!-- Prism.js for syntax highlighting -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <!-- طبقة نجوم خلفية -->
+    <canvas
+      id="stars-back"
+      class="stars stars--back"
+      aria-hidden="true"
+    ></canvas>
+
+    <!-- طبقة نجوم أمامية -->
+    <canvas
+      id="stars-front"
+      class="stars stars--front"
+      aria-hidden="true"
+    ></canvas>
+  
+    <!-- Background Effects -->
+    <div class="bg">
+      <div class="aurora"></div>
+      <div class="glows">
+        <div class="glow g1"></div>
+        <div class="glow g2"></div>
+        <div class="glow g3"></div>
+      </div>
+      <div class="grain"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container pt-5">
+      <!-- Experience Header -->
+      <div class="experience-header">
+        <div class="mb-4">
+          <div>
+            <h1 class="space-h6 mb-3 text-start fs-1">SamaSoft</h1>
+          </div>
+          <div class="mb-4">
+            <span class="badge badge-magenta">Desktop Application Developer</span>
+            <span class="badge badge-cyan">Remote</span>
+            <span class="badge badge-gold">FullTime</span>
+            <span class="badge badge-lime">2021 - 2021</span>
+          </div>
+          <div>
+            <a href="../index.html" class="btn-lavender">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Content -->
+      <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-12">
+          <!-- Overview -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-info-circle"></i> Project Details
+              </h3>
+            </div>
+            <div class="card-body">
+              <article class="samasoft-lang ltr">
+                <div class="samasoft-section">
+                  <h3>Overview</h3>
+                  <p>
+                    <strong>SamaSoft</strong> is a provider of innovative software solutions across diverse industries. 
+                    During my time there, I contributed to the continuous improvement and expansion of several major systems.
+                  </p>
+                  <p>
+                    My responsibilities included system enhancements, feature development, and UI/UX improvements 
+                    to deliver more intuitive and user-friendly experiences across multiple enterprise applications.
+                  </p>
+                </div>
+
+                <div class="samasoft-section">
+                  <h3>Key Projects</h3>
+                  <div class="samasoft-kv">
+                    <h4>Human Resources Management System</h4>
+                    <p>
+                      Simplified and streamlined HR processes for enterprise clients, including employee management, 
+                      payroll processing, and comprehensive reporting capabilities.
+                    </p>
+                    
+                    <h4>Restaurant Management System</h4>
+                    <p>
+                      Enhanced features for inventory control, order processing, and customer interaction. 
+                      Implemented real-time tracking and automated reporting for better operational efficiency.
+                    </p>
+                    
+                    <h4>Clinic Management System</h4>
+                    <p>
+                      Built comprehensive tools for patient records, appointment scheduling, and medical reporting, 
+                      enabling more efficient clinic operations and better patient care.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="samasoft-section">
+                  <h3>Technical Approach</h3>
+                  <p>
+                    All systems were built using <strong>Windows Forms</strong> with <strong>C#</strong> and <strong>Entity Framework</strong> 
+                    for data access. I focused on creating maintainable, scalable solutions that could adapt to 
+                    changing business requirements while ensuring optimal performance.
+                  </p>
+                </div>
+
+                <div class="samasoft-footer">
+                  Focus: Delivering practical solutions that solve real business problems with clean, maintainable code.
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Code Snippets -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-code"></i> Code Highlights
+              </h3>
+              <p class="card-subtitle">
+                Key code snippets from this experience
+              </p>
+            </div>
+            <div class="card-body">
+                <!-- Employee Management Service -->
+                <div class="code-snippet code-snippet-lg mb-4">
+                    <div class="code-snippet-header">
+                        <h5 class="mb-2">
+                        <i class="fas fa-code"></i> EmployeeService.cs
+                    </h5>
+                    <div class="text-muted mb-3">
+                        <p class="mb-1">
+                            Service class for managing employee operations in the HR system.
+                        </p>
+                        <p class="mb-1">
+                            Handles CRUD operations, validation, and business logic for employee management.
+                        </p>
+                    </div>
+                    </div>
+                    <div class="code-snippet-body">
+                        <div class="code-toolbar">
+                        <span class="language-badge badge badge-cyan">C#</span>
+                        <button
+                            class="btn btn-sm btn-outline-light copy-btn"
+                            onclick="copyCode(0)"
+                        >
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                        </div>
+                        <pre
+                        class="line-numbers"
+                        ><code class="language-csharp">
+
+public class EmployeeService
+{
+    private readonly HRDbContext _context;
+    private readonly ILogger<EmployeeService> _logger;
+
+    public EmployeeService(HRDbContext context, ILogger<EmployeeService> logger)
+    {
+        _context = context;
+        _logger = logger;
+    }
+
+    public async Task<Result<Employee>> CreateEmployeeAsync(CreateEmployeeDto dto)
+    {
+        try
+        {
+            // Validate employee data
+            var validationResult = await ValidateEmployeeDataAsync(dto);
+            if (!validationResult.IsValid)
+            {
+                return Result<Employee>.Failure(validationResult.Errors);
+            }
+
+            // Check for duplicate employee ID
+            var existingEmployee = await _context.Employees
+                .FirstOrDefaultAsync(e => e.EmployeeId == dto.EmployeeId);
+            
+            if (existingEmployee != null)
+            {
+                return Result<Employee>.Failure("Employee ID already exists");
+            }
+
+            // Create new employee
+            var employee = new Employee
+            {
+                EmployeeId = dto.EmployeeId,
+                FirstName = dto.FirstName,
+                LastName = dto.LastName,
+                Email = dto.Email,
+                DepartmentId = dto.DepartmentId,
+                Position = dto.Position,
+                HireDate = dto.HireDate,
+                Salary = dto.Salary,
+                IsActive = true,
+                CreatedAt = DateTime.UtcNow
+            };
+
+            _context.Employees.Add(employee);
+            await _context.SaveChangesAsync();
+
+            _logger.LogInformation("Employee created successfully: {EmployeeId}", employee.EmployeeId);
+            return Result<Employee>.Success(employee);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error creating employee");
+            return Result<Employee>.Failure("An error occurred while creating the employee");
+        }
+    }
+
+    public async Task<Result<Employee>> UpdateEmployeeAsync(int id, UpdateEmployeeDto dto)
+    {
+        try
+        {
+            var employee = await _context.Employees.FindAsync(id);
+            if (employee == null)
+            {
+                return Result<Employee>.Failure("Employee not found");
+            }
+
+            // Update employee properties
+            employee.FirstName = dto.FirstName;
+            employee.LastName = dto.LastName;
+            employee.Email = dto.Email;
+            employee.DepartmentId = dto.DepartmentId;
+            employee.Position = dto.Position;
+            employee.Salary = dto.Salary;
+            employee.UpdatedAt = DateTime.UtcNow;
+
+            await _context.SaveChangesAsync();
+
+            _logger.LogInformation("Employee updated successfully: {EmployeeId}", employee.EmployeeId);
+            return Result<Employee>.Success(employee);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error updating employee");
+            return Result<Employee>.Failure("An error occurred while updating the employee");
+        }
+    }
+
+    public async Task<Result<bool>> DeleteEmployeeAsync(int id)
+    {
+        try
+        {
+            var employee = await _context.Employees.FindAsync(id);
+            if (employee == null)
+            {
+                return Result<bool>.Failure("Employee not found");
+            }
+
+            // Soft delete - mark as inactive
+            employee.IsActive = false;
+            employee.DeletedAt = DateTime.UtcNow;
+
+            await _context.SaveChangesAsync();
+
+            _logger.LogInformation("Employee deleted successfully: {EmployeeId}", employee.EmployeeId);
+            return Result<bool>.Success(true);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error deleting employee");
+            return Result<bool>.Failure("An error occurred while deleting the employee");
+        }
+    }
+
+    public async Task<Result<PagedResult<Employee>>> GetEmployeesAsync(EmployeeFilterDto filter)
+    {
+        try
+        {
+            var query = _context.Employees
+                .Include(e => e.Department)
+                .Where(e => e.IsActive);
+
+            // Apply filters
+            if (!string.IsNullOrEmpty(filter.SearchTerm))
+            {
+                query = query.Where(e => 
+                    e.FirstName.Contains(filter.SearchTerm) ||
+                    e.LastName.Contains(filter.SearchTerm) ||
+                    e.EmployeeId.Contains(filter.SearchTerm));
+            }
+
+            if (filter.DepartmentId.HasValue)
+            {
+                query = query.Where(e => e.DepartmentId == filter.DepartmentId.Value);
+            }
+
+            if (filter.IsActive.HasValue)
+            {
+                query = query.Where(e => e.IsActive == filter.IsActive.Value);
+            }
+
+            // Apply sorting
+            query = filter.SortBy?.ToLower() switch
+            {
+                "name" => filter.SortDescending ? query.OrderByDescending(e => e.FirstName) : query.OrderBy(e => e.FirstName),
+                "department" => filter.SortDescending ? query.OrderByDescending(e => e.Department.Name) : query.OrderBy(e => e.Department.Name),
+                "hiredate" => filter.SortDescending ? query.OrderByDescending(e => e.HireDate) : query.OrderBy(e => e.HireDate),
+                _ => query.OrderBy(e => e.FirstName)
+            };
+
+            var totalCount = await query.CountAsync();
+            var employees = await query
+                .Skip((filter.Page - 1) * filter.PageSize)
+                .Take(filter.PageSize)
+                .ToListAsync();
+
+            var pagedResult = new PagedResult<Employee>
+            {
+                Items = employees,
+                TotalCount = totalCount,
+                Page = filter.Page,
+                PageSize = filter.PageSize,
+                TotalPages = (int)Math.Ceiling((double)totalCount / filter.PageSize)
+            };
+
+            return Result<PagedResult<Employee>>.Success(pagedResult);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error retrieving employees");
+            return Result<PagedResult<Employee>>.Failure("An error occurred while retrieving employees");
+        }
+    }
+
+    private async Task<ValidationResult> ValidateEmployeeDataAsync(CreateEmployeeDto dto)
+    {
+        var result = new ValidationResult();
+
+        if (string.IsNullOrWhiteSpace(dto.EmployeeId))
+            result.Errors.Add("Employee ID is required");
+
+        if (string.IsNullOrWhiteSpace(dto.FirstName))
+            result.Errors.Add("First name is required");
+
+        if (string.IsNullOrWhiteSpace(dto.LastName))
+            result.Errors.Add("Last name is required");
+
+        if (string.IsNullOrWhiteSpace(dto.Email) || !IsValidEmail(dto.Email))
+            result.Errors.Add("Valid email is required");
+
+        if (dto.DepartmentId <= 0)
+            result.Errors.Add("Valid department is required");
+
+        if (dto.Salary < 0)
+            result.Errors.Add("Salary cannot be negative");
+
+        result.IsValid = !result.Errors.Any();
+        return result;
+    }
+
+    private bool IsValidEmail(string email)
+    {
+        try
+        {
+            var addr = new System.Net.Mail.MailAddress(email);
+            return addr.Address == email;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+}
+                    
+                        </code></pre>
+                    </div>
+                </div>
+
+                <!-- Restaurant Order Management -->
+                <div class="code-snippet code-snippet-lg mb-4">
+                    <div class="code-snippet-header">
+                        <h5 class="mb-2">
+                        <i class="fas fa-code"></i> OrderService.cs
+                        </h5>
+                        <p class="text-muted mb-3">
+                        Service for managing restaurant orders with inventory tracking and real-time updates
+                        </p>
+                    </div>
+                    <div class="code-snippet-body">
+                        <div class="code-toolbar">
+                        <span class="language-badge badge badge-cyan">C#</span>
+                        <button
+                            class="btn btn-sm btn-outline-light copy-btn"
+                            onclick="copyCode(1)"
+                        >
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                        </div>
+                        <pre
+                        class="line-numbers"
+                        ><code class="language-csharp">
+
+public class OrderService
+{
+    private readonly RestaurantDbContext _context;
+    private readonly IInventoryService _inventoryService;
+    private readonly ILogger<OrderService> _logger;
+
+    public OrderService(RestaurantDbContext context, IInventoryService inventoryService, ILogger<OrderService> logger)
+    {
+        _context = context;
+        _inventoryService = inventoryService;
+        _logger = logger;
+    }
+
+    public async Task<Result<Order>> CreateOrderAsync(CreateOrderDto dto)
+    {
+        using var transaction = await _context.Database.BeginTransactionAsync();
+        
+        try
+        {
+            // Validate order items and check inventory
+            var inventoryValidation = await ValidateInventoryAsync(dto.OrderItems);
+            if (!inventoryValidation.IsValid)
+            {
+                return Result<Order>.Failure(inventoryValidation.Errors);
+            }
+
+            // Create order
+            var order = new Order
+            {
+                OrderNumber = await GenerateOrderNumberAsync(),
+                CustomerId = dto.CustomerId,
+                TableNumber = dto.TableNumber,
+                OrderDate = DateTime.UtcNow,
+                Status = OrderStatus.Pending,
+                TotalAmount = 0,
+                CreatedBy = dto.CreatedBy
+            };
+
+            _context.Orders.Add(order);
+            await _context.SaveChangesAsync();
+
+            // Add order items
+            decimal totalAmount = 0;
+            foreach (var itemDto in dto.OrderItems)
+            {
+                var menuItem = await _context.MenuItems.FindAsync(itemDto.MenuItemId);
+                if (menuItem == null)
+                {
+                    await transaction.RollbackAsync();
+                    return Result<Order>.Failure($"Menu item not found: {itemDto.MenuItemId}");
+                }
+
+                var orderItem = new OrderItem
+                {
+                    OrderId = order.Id,
+                    MenuItemId = itemDto.MenuItemId,
+                    Quantity = itemDto.Quantity,
+                    UnitPrice = menuItem.Price,
+                    TotalPrice = menuItem.Price * itemDto.Quantity,
+                    SpecialInstructions = itemDto.SpecialInstructions
+                };
+
+                _context.OrderItems.Add(orderItem);
+                totalAmount += orderItem.TotalPrice;
+
+                // Update inventory
+                await _inventoryService.ReduceInventoryAsync(itemDto.MenuItemId, itemDto.Quantity);
+            }
+
+            // Update order total
+            order.TotalAmount = totalAmount;
+            _context.Orders.Update(order);
+
+            await _context.SaveChangesAsync();
+            await transaction.CommitAsync();
+
+            _logger.LogInformation("Order created successfully: {OrderNumber}", order.OrderNumber);
+            return Result<Order>.Success(order);
+        }
+        catch (Exception ex)
+        {
+            await transaction.RollbackAsync();
+            _logger.LogError(ex, "Error creating order");
+            return Result<Order>.Failure("An error occurred while creating the order");
+        }
+    }
+
+    public async Task<Result<Order>> UpdateOrderStatusAsync(int orderId, OrderStatus newStatus)
+    {
+        try
+        {
+            var order = await _context.Orders
+                .Include(o => o.OrderItems)
+                .FirstOrDefaultAsync(o => o.Id == orderId);
+
+            if (order == null)
+            {
+                return Result<Order>.Failure("Order not found");
+            }
+
+            var oldStatus = order.Status;
+            order.Status = newStatus;
+            order.UpdatedAt = DateTime.UtcNow;
+
+            // If order is cancelled, restore inventory
+            if (newStatus == OrderStatus.Cancelled && oldStatus != OrderStatus.Cancelled)
+            {
+                await RestoreInventoryAsync(order.OrderItems);
+            }
+
+            await _context.SaveChangesAsync();
+
+            _logger.LogInformation("Order status updated: {OrderNumber} from {OldStatus} to {NewStatus}", 
+                order.OrderNumber, oldStatus, newStatus);
+
+            return Result<Order>.Success(order);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error updating order status");
+            return Result<Order>.Failure("An error occurred while updating the order status");
+        }
+    }
+
+    public async Task<Result<Order>> AddOrderItemAsync(int orderId, AddOrderItemDto dto)
+    {
+        using var transaction = await _context.Database.BeginTransactionAsync();
+        
+        try
+        {
+            var order = await _context.Orders
+                .Include(o => o.OrderItems)
+                .FirstOrDefaultAsync(o => o.Id == orderId);
+
+            if (order == null)
+            {
+                return Result<Order>.Failure("Order not found");
+            }
+
+            if (order.Status != OrderStatus.Pending)
+            {
+                return Result<Order>.Failure("Cannot add items to an order that is not pending");
+            }
+
+            // Check inventory
+            var inventoryCheck = await _inventoryService.CheckAvailabilityAsync(dto.MenuItemId, dto.Quantity);
+            if (!inventoryCheck.IsAvailable)
+            {
+                return Result<Order>.Failure($"Insufficient inventory: {inventoryCheck.Message}");
+            }
+
+            var menuItem = await _context.MenuItems.FindAsync(dto.MenuItemId);
+            var orderItem = new OrderItem
+            {
+                OrderId = orderId,
+                MenuItemId = dto.MenuItemId,
+                Quantity = dto.Quantity,
+                UnitPrice = menuItem.Price,
+                TotalPrice = menuItem.Price * dto.Quantity,
+                SpecialInstructions = dto.SpecialInstructions
+            };
+
+            _context.OrderItems.Add(orderItem);
+            
+            // Update order total
+            order.TotalAmount += orderItem.TotalPrice;
+            order.UpdatedAt = DateTime.UtcNow;
+
+            // Update inventory
+            await _inventoryService.ReduceInventoryAsync(dto.MenuItemId, dto.Quantity);
+
+            await _context.SaveChangesAsync();
+            await transaction.CommitAsync();
+
+            _logger.LogInformation("Order item added successfully to order: {OrderNumber}", order.OrderNumber);
+            return Result<Order>.Success(order);
+        }
+        catch (Exception ex)
+        {
+            await transaction.RollbackAsync();
+            _logger.LogError(ex, "Error adding order item");
+            return Result<Order>.Failure("An error occurred while adding the order item");
+        }
+    }
+
+    private async Task<ValidationResult> ValidateInventoryAsync(List<CreateOrderItemDto> orderItems)
+    {
+        var result = new ValidationResult();
+
+        foreach (var item in orderItems)
+        {
+            var availability = await _inventoryService.CheckAvailabilityAsync(item.MenuItemId, item.Quantity);
+            if (!availability.IsAvailable)
+            {
+                result.Errors.Add($"Insufficient inventory for menu item {item.MenuItemId}: {availability.Message}");
+            }
+        }
+
+        result.IsValid = !result.Errors.Any();
+        return result;
+    }
+
+    private async Task<string> GenerateOrderNumberAsync()
+    {
+        var today = DateTime.UtcNow.Date;
+        var orderCount = await _context.Orders
+            .Where(o => o.OrderDate.Date == today)
+            .CountAsync();
+
+        return $"ORD-{today:yyyyMMdd}-{(orderCount + 1):D4}";
+    }
+
+    private async Task RestoreInventoryAsync(List<OrderItem> orderItems)
+    {
+        foreach (var item in orderItems)
+        {
+            await _inventoryService.IncreaseInventoryAsync(item.MenuItemId, item.Quantity);
+        }
+    }
+}
+                        </code></pre>
+                    </div>
+                </div>
+
+            </div>
+          </div>
+
+          <!-- Technical Achievements -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-trophy"></i> Technical Achievements
+              </h3>
+            </div>
+            <div class="card-body">
+              <!-- Achievement 1 -->
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">HR System Optimization</h5>
+                    <p class="mb-0 text-muted">Reduced HR process time by 40% through automated workflows and improved UI design, streamlining employee management operations.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Achievement 2 -->
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">Restaurant Management Enhancement</h5>
+                    <p class="mb-0 text-muted">Implemented real-time inventory tracking that reduced food waste by 25% and improved order processing efficiency.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Achievement 3 -->
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">Clinic System Integration</h5>
+                    <p class="mb-0 text-muted">Built patient scheduling system that improved appointment efficiency by 60% and enhanced patient care coordination.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">System Stability & Performance</h5>
+                    <p class="mb-0 text-muted">Achieved 99.8% system uptime across all applications with optimized database queries and efficient data access patterns.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">User Experience Improvements</h5>
+                    <p class="mb-0 text-muted">Redesigned interfaces across all systems to deliver more intuitive user experiences, resulting in 4.7/5 user satisfaction rating.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <!-- Skills Used -->
+          <div class="card mb-4">
+                <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-tools"></i> Technologies Used
+                </h3>
+                </div>
+                <div class="card-body">
+                <span class="badge badge-magenta badge-icon">
+                    <i class="fas fa-code"></i> C#
+                </span>
+                <span class="badge badge-cyan badge-icon">
+                    <i class="fas fa-database"></i> SQL Server
+                </span>
+                <span class="badge badge-lime badge-icon">
+                    <i class="fas fa-desktop"></i> Windows Forms
+                </span>
+                <span class="badge badge-gold badge-icon">
+                    <i class="fas fa-layer-group"></i> Entity Framework
+                </span>
+                <span class="badge badge-holographic badge-icon">
+                    <i class="fas fa-chart-bar"></i> Crystal Reports
+                </span>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+      // Copy code function
+      function copyCode(index) {
+        const codeElement = document.querySelectorAll(".code-snippet pre code")[
+          index
+        ];
+        const text = codeElement.textContent;
+
+        navigator.clipboard.writeText(text).then(() => {
+          // Show success feedback
+          const button = document.querySelectorAll(".copy-btn")[index];
+          const originalText = button.innerHTML;
+          button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          button.classList.add("btn-success");
+          button.classList.remove("btn-outline-light");
+
+          setTimeout(() => {
+            button.innerHTML = originalText;
+            button.classList.remove("btn-success");
+            button.classList.add("btn-outline-light");
+          }, 2000);
+        });
+      }
+
+      // Initialize Prism.js after DOM is loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        Prism.highlightAll();
+      });
+    </script>
+  </body>
+</html>

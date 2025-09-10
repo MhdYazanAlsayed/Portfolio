@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚀 Yazan Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <!-- Temporary debug styles -->
+    <style>
+      .stars {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: -1 !important;
+        pointer-events: none !important;
+        background: rgba(
+          255,
+          0,
+          0,
+          0.1
+        ) !important; /* Temporary red background to see if canvas is there */
+      }
+    </style>
+    <!-- Prism.js for syntax highlighting -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- طبقة نجوم خلفية -->
+    <canvas
+      id="stars-back"
+      class="stars stars--back"
+      aria-hidden="true"
+    ></canvas>
+
+    <!-- طبقة نجوم أمامية -->
+    <canvas
+      id="stars-front"
+      class="stars stars--front"
+      aria-hidden="true"
+    ></canvas>
+
+    <!-- Background Effects -->
+    <div class="bg">
+      <div class="aurora"></div>
+      <div class="glows">
+        <div class="glow g1"></div>
+        <div class="glow g2"></div>
+        <div class="glow g3"></div>
+      </div>
+      <div class="grain"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container pt-5">
+      <!-- Experience Header -->
+      <div class="experience-header">
+        <div class="mb-4">
+          <div>
+            <h1 class="space-h6 mb-3 text-start fs-1">
+              Payship - Multi-Carrier Shipping Platform
+            </h1>
+          </div>
+          <div class="mb-4">
+            <span class="badge badge-cyan">Full Stack Web Developer</span>
+            <span class="badge badge-gold">Saudi Arabia</span>
+            <span class="badge badge-lime">2022</span>
+          </div>
+          <div>
+            <a href="../index.html" class="btn-lavender">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Content -->
+      <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-12">
+          <!-- Overview -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-info-circle"></i> Project Details
+              </h3>
+            </div>
+            <div class="card-body">
+              <section id="payship">
+                <h1 class="mb-2">One Interface for All Your Shipping</h1>
+                <p>
+                  A unified hub that connects users and merchants with multiple
+                  shipping companies, compares prices and SLAs, and provides
+                  end-to-end tracking and notifications.
+                </p>
+
+                <article aria-labelledby="problem">
+                  <h2 id="problem">The Problem</h2>
+                  <p>
+                    Shipping a parcel sounds simple—until you actually try to do
+                    it. Without Payship, users and merchants often face:
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Fragmented experience:</strong> Every carrier has
+                      a different website, flow, and terminology.
+                    </li>
+                    <li>
+                      <strong>Unclear pricing:</strong> Hidden fees, changing
+                      rates, and no easy way to compare options side-by-side.
+                    </li>
+                    <li>
+                      <strong>Poor visibility:</strong> Tracking links scattered
+                      across emails; no single place to see all shipments and
+                      their statuses.
+                    </li>
+                    <li>
+                      <strong>Time sink for merchants:</strong> Creating dozens
+                      of shipments one by one across multiple portals.
+                    </li>
+                    <li>
+                      <strong>Inconsistent SLAs:</strong> Delivery times and
+                      pickup windows vary, making planning difficult.
+                    </li>
+                  </ul>
+                  <p>
+                    The result is
+                    <em>confusion, delays, and higher costs</em>—especially when
+                    shipping volume grows or when shipments have different
+                    destinations and constraints.
+                  </p>
+                </article>
+
+                <article aria-labelledby="solution">
+                  <h2 id="solution">The Solution</h2>
+                  <p>
+                    <strong>Payship</strong> consolidates major shipping
+                    companies into a single, consistent interface. Enter your
+                    shipment details once, and Payship:
+                  </p>
+                  <ol>
+                    <li>Normalizes your data across carriers.</li>
+                    <li>
+                      Surfaces the best options ranked by price, ETA, and
+                      reliability.
+                    </li>
+                    <li>Creates and manages your labels and pickups.</li>
+                    <li>
+                      Keeps you informed with real-time status updates and
+                      notifications.
+                    </li>
+                  </ol>
+                </article>
+
+                <article aria-labelledby="how-it-works">
+                  <h2 id="how-it-works mb-2">How It Works ?</h2>
+
+                  <section aria-labelledby="user-flow">
+                    <h4 id="user-flow">For Individuals</h4>
+                    <ol>
+                      <li>Enter origin and destination.</li>
+                      <li>
+                        Provide parcel details (weight, dimensions, contents).
+                      </li>
+                      <li>
+                        Review matched carriers with instant price and ETA
+                        comparison.
+                      </li>
+                      <li>Select the best option, confirm, and pay.</li>
+                      <li>
+                        Track your shipment from one dashboard—no more juggling
+                        links.
+                      </li>
+                    </ol>
+                  </section>
+
+                  <section aria-labelledby="merchant-flow">
+                    <h4 id="merchant-flow">For Merchants</h4>
+                    <ol>
+                      <li>Download the Excel template.</li>
+                      <li>
+                        Fill in multiple orders (destinations, parcel info,
+                        service preferences).
+                      </li>
+                      <li>
+                        Upload the file and let Payship auto-create all
+                        shipments.
+                      </li>
+                      <li>
+                        Bulk-select the preferred carrier per order or apply
+                        global rules.
+                      </li>
+                      <li>
+                        Confirm, pay, and monitor all shipments in a single
+                        view.
+                      </li>
+                    </ol>
+                  </section>
+                </article>
+
+                <article aria-labelledby="benefits">
+                  <h2 id="benefits">Key Benefits</h2>
+                  <ul>
+                    <li>
+                      <strong>Clarity over chaos:</strong> One place to compare
+                      prices, ETAs, and services across carriers.
+                    </li>
+                    <li>
+                      <strong>Real savings:</strong> Optimized recommendations
+                      help reduce shipping costs.
+                    </li>
+                    <li>
+                      <strong>Time back:</strong> Bulk creation via Excel for
+                      high-volume merchants.
+                    </li>
+                    <li>
+                      <strong>Full visibility:</strong> Unified tracking and
+                      status notifications for every shipment.
+                    </li>
+                    <li>
+                      <strong>Scalable workflows:</strong> Works for a single
+                      parcel or thousands of orders.
+                    </li>
+                  </ul>
+                </article>
+
+                <article aria-labelledby="before-after">
+                  <h2 id="before-after">Before vs. After Payship</h2>
+                  <section>
+                    <h3>Before</h3>
+                    <ul>
+                      <li>
+                        Multiple tabs, multiple logins, inconsistent forms.
+                      </li>
+                      <li>
+                        Manual price checks and guesswork on delivery times.
+                      </li>
+                      <li>
+                        Scattered tracking links and missed status changes.
+                      </li>
+                      <li>Re-entering the same data for each carrier.</li>
+                    </ul>
+                  </section>
+                  <section>
+                    <h3>After</h3>
+                    <ul>
+                      <li>
+                        Single login, unified flow, consistent data entry.
+                      </li>
+                      <li>
+                        Transparent side-by-side comparison of price and ETA.
+                      </li>
+                      <li>One dashboard for tracking and notifications.</li>
+                      <li>
+                        Bulk creation and carrier selection rules for merchants.
+                      </li>
+                    </ul>
+                  </section>
+                </article>
+
+                <article aria-labelledby="features">
+                  <h2 id="features">Core Features</h2>
+                  <ul>
+                    <li>
+                      Multi-carrier integration (domestic and international).
+                    </li>
+                    <li>Real-time rates and service availability.</li>
+                    <li>Unified tracking &amp; push/email notifications.</li>
+                    <li>Excel bulk import for high-volume orders.</li>
+                    <li>Label generation and pickup scheduling.</li>
+                    <li>Audit trail and shipment history.</li>
+                  </ul>
+                </article>
+
+                <article aria-labelledby="outcomes">
+                  <h2 id="outcomes">Outcomes</h2>
+                  <ul>
+                    <li>
+                      Reduced time-to-ship for merchants handling large batches.
+                    </li>
+                    <li>
+                      Lower total shipping cost via smart recommendations.
+                    </li>
+                    <li>
+                      Fewer support tickets thanks to clear, unified tracking.
+                    </li>
+                  </ul>
+                  <p>
+                    <em
+                      >(You can replace this section with concrete metrics once
+                      available, e.g., “−32% average cost,” “2× faster label
+                      creation,” etc.)</em
+                    >
+                  </p>
+                </article>
+              </section>
+            </div>
+          </div>
+
+          <!-- Skills Used -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-tools"></i> Technologies Used
+              </h3>
+            </div>
+            <div class="card-body">
+              <!-- REPLACE THESE WITH YOUR ACTUAL SKILLS -->
+              <span class="badge badge-gold badge-icon">
+                <i class="fas fa-code"></i> HTML & CSS & TS
+              </span>
+              <span class="badge badge-magenta badge-icon">
+                <i class="fas fa-code"></i> C# & Asp.Net Core Mvc
+              </span>
+              <span class="badge badge-cyan badge-icon">
+                <i class="fas fa-database"></i> SqlServer & Ef_Core
+              </span>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">🖼️ Pictures of product</h3>
+            </div>
+
+            <div class="card-body">
+              <p class="mb-2">Some pictures of system's pages</p>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span>🖼️</span>
+                <a href="../imgs/payship-1.png">Landing Page</a>
+              </div>
+
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span>🖼️</span>
+                <a href="../imgs/payship-2.png">Why Choose Us ?</a>
+              </div>
+
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span>🖼️</span>
+                <a href="../imgs/payship-3.png">Company Selection</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+      // Debug: Check if stars are working
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("QServs page loaded");
+        const backCanvas = document.getElementById("stars-back");
+        const frontCanvas = document.getElementById("stars-front");
+        console.log("Back canvas:", backCanvas);
+        console.log("Front canvas:", frontCanvas);
+
+        if (backCanvas && frontCanvas) {
+          console.log("Canvas elements found, stars should be working");
+
+          // Test: Draw some simple stars manually
+          setTimeout(() => {
+            const ctx = backCanvas.getContext("2d");
+            ctx.fillStyle = "#ffffff";
+            ctx.beginPath();
+            ctx.arc(100, 100, 2, 0, Math.PI * 2);
+            ctx.fill();
+            console.log("Test star drawn");
+          }, 1000);
+        } else {
+          console.error("Canvas elements not found!");
+        }
+      });
+
+      // Copy code function
+      function copyCode(index) {
+        const codeElement = document.querySelectorAll(".code-snippet pre code")[
+          index
+        ];
+        const text = codeElement.textContent;
+
+        navigator.clipboard.writeText(text).then(() => {
+          // Show success feedback
+          const button = document.querySelectorAll(".copy-btn")[index];
+          const originalText = button.innerHTML;
+          button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          button.classList.add("btn-success");
+          button.classList.remove("btn-outline-light");
+
+          setTimeout(() => {
+            button.innerHTML = originalText;
+            button.classList.remove("btn-success");
+            button.classList.add("btn-outline-light");
+          }, 2000);
+        });
+      }
+
+      // Initialize Prism.js after DOM is loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        Prism.highlightAll();
+      });
+    </script>
+  </body>
+</html>

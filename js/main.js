@@ -1,133 +1,319 @@
-const avatarButton = $("[avatar-button]")
-const avatarModal = $("[avatar-modal]")
-const avatarOverlay = $("[overlay]")
-const menuLinks = _("[menu-links] a")
-const root = $("#root")
+/**
+ * طبقتا نجوم (خلف/أمام) مع عمق وهمي:
+ * - نجوم خلفية كبيرة أقل عدداً وبطيئة
+ * - نجوم أمامية أصغر وأكثر عدداً وأسرع
+ * - انجراف تلقائي + بارالاكس لطيف مع الماوس
+ * - إيقاف عند الخلفية لتوفير البطارية
+ */
 
-let sections = [
-    `
-    <div class="section">
-        <div class="box show-up">
-            <h4>Who Am I <i class="fa-solid fa-question"></i></h4>
-            <p>
-                My name's mohammed yazan <br />
-                I'm 22 years old <br />
-                I'm from Damascus Syria <br />
-                I work as programmer <br />
-                I speak arabic and i learning english now
-            </p>
-        </div>
+class Starfield {
+  constructor(canvas, opts) {
+    this.canvas = canvas;
+    this.ctx = canvas.getContext("2d");
+    this.count = opts.count ?? 400;
+    this.speed = opts.speed ?? 0.02; // سرعة انجراف
+    this.parallax = opts.parallax ?? 0.05;
+    this.sizeRange = opts.sizeRange ?? [0.5, 1.8];
+    this.twinkle = opts.twinkle ?? 0.15;
 
-        <div class="box show-up">
-            <h4>Education <i class="fa-solid fa-school"></i></h4>
-            <p>
-                I graduated from Bassam Kiki School, majoring in computers <br />
-                I started studying computer science at Damascus University since 2018, and I am still studying until now
-            </p>
-        </div>
+    this.vw = innerWidth;
+    this.vh = innerHeight;
+    this.dpr = Math.min(devicePixelRatio || 1, 1.5); // تقليل DPR للأداء
+    this.stars = [];
+    this.mx = this.vw / 2;
+    this.my = this.vh / 2;
+    this.tx = this.mx;
+    this.ty = this.my;
 
-        <div class="box show-up">
-            <h4>Experience <i class="fa-solid fa-person-digging"></i></h4>
-            <p>
-                I working freelancer from 2018<br />
-                I worked at I.B.C company in Syria <br />
-                I worked at SamaSoft company
-            </p>
-        </div>
-    </div>
-` ,
-`
-    <div class="section show-up" skills>
-        <div class="skill">
-            <h4>C# Programming</h4>
-            <span>+7 Years Experience</span>
-        </div>
+    // تحسينات الأداء
+    this.frameCount = 0;
+    this.lastFrameTime = 0;
+    this.targetFPS = 30; // تقليل FPS للأداء
+    this.frameInterval = 1000 / this.targetFPS;
 
-        <div class="skill">
-            <h4>Asp.Net Core</h4>
-            <span>All Frameworks</span>
-        </div>
+    this.resize();
+    this.init();
+    this._raf = null;
+    this._hidden = false;
 
-        <div class="skill">
-            <h4>Windows Form App</h4>
-            <span>And Wpf</span>
-        </div>
+    addEventListener("resize", () => this.onResize());
+    // addEventListener(
+    //   "pointermove",
+    //   (e) => {
+    //     this.tx = e.clientX;
+    //     this.ty = e.clientY;
+    //   },
+    //   { passive: true }
+    // );
+  }
 
-        <div class="skill">
-            <h4>Front-End</h4>
-            <span>Html,Css,Js,jQuery,Bootstrap</span>
-        </div>
+  rand(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+  init() {
+    const { vw, vh } = this;
+    this.stars = Array.from({ length: this.count }, () => ({
+      x: Math.random() * vw,
+      y: Math.random() * vh,
+      z: Math.random(), // عمق (0-1)
+      r: this.rand(this.sizeRange[0], this.sizeRange[1]),
+      a: this.rand(0.6, 1.0), // alpha base - زيادة الشفافية
+      phi: Math.random() * Math.PI * 2, // طور الوميض
+    }));
 
-        <div class="skill">
-            <h4>React js</h4>
-            <span>1 Years Experience</span>
-        </div>
+    // تأكد من وجود نجوم مرئية
+    console.log(`تم إنشاء ${this.stars.length} نجمة في طبقة النجوم`);
+  }
 
-        <div class="skill">
-            <h4>Microsoft Sql Server</h4>
-            <span>MySql,Access,Excel,Oracle</span>
-        </div>
-    </div>    
-` ,
-`
-    <div class="section show-up" projects>
-        <a href="https://www.youtube.com/watch?v=2NlJPKNiQJ0" target="_blank" class="project" style="background-image: url(images/whatsapp.png)">
-            <div class="caption">
-                <h4>WhatsApp Clone</h4>
-                <span>React js + Asp.Net Core Api</span>
-            </div>
-        </a>
+  resize() {
+    const { canvas, ctx } = this;
+    this.vw = innerWidth;
+    this.vh = innerHeight;
+    const d = this.dpr;
+    canvas.width = this.vw * d;
+    canvas.height = this.vh * d;
+    canvas.style.width = this.vw + "px";
+    canvas.style.height = this.vh + "px";
+    ctx.setTransform(d, 0, 0, d, 0, 0);
+  }
+  onResize() {
+    this.resize();
+  }
 
-        <a href="https://www.youtube.com/watch?v=9veEULOlX80" target="_blank" class="project" style="background-image: url(images/instagram.webp)">
-            <div class="caption">
-                <h4>Instagram Clone</h4>
-                <span>React js</span>
-            </div>
-        </a>
-    <div>
-`
-]
+  lerp(a, b, t) {
+    return a + (b - a) * t;
+  }
 
-//Configure Color Scheme
-let colorScheme = Math.floor(Math.random() * 2);
-if (colorScheme === 1) {
-    avatarButton.src = "images/me-aqua.jpg";
-    $('body').style.setProperty("--color-base" , "var(--aqua)");
+  draw(now) {
+    // تحكم في معدل الإطارات للأداء
+    if (now - this.lastFrameTime < this.frameInterval) {
+      return;
+    }
+    this.lastFrameTime = now;
+
+    const { ctx, vw, vh, stars } = this;
+    // خلفية شفافة: نمسح فقط
+    ctx.clearRect(0, 0, vw, vh);
+
+    // لَير بارالاكس لطيف
+    this.mx = this.lerp(this.mx, this.tx, 0.06);
+    this.my = this.lerp(this.my, this.ty, 0.06);
+    const nx = (this.mx - vw / 2) / vw;
+    const ny = (this.my - vh / 2) / vh;
+
+    // حساب القيم المشتركة مرة واحدة
+    const time = now * 0.005; // تقليل سرعة الحركة
+    const speedMultiplier = this.speed * 50; // تقليل مضاعف السرعة
+
+    for (const s of stars) {
+      // حركة مبسطة للنجوم
+      const driftX = Math.sin(time * 0.2 + s.z * 8) * speedMultiplier;
+      const driftY = Math.cos(time * 0.15 + s.z * 10) * speedMultiplier;
+
+      // حركة خطية مبسطة
+      const linearX = ((time * this.speed * 60 * (1 - s.z)) % (vw * 2)) - vw;
+      const linearY = ((time * this.speed * 30 * (1 - s.z)) % (vh * 2)) - vh;
+
+      // بارالاكس حسب العمق + الحركة التلقائية
+      const px = s.x + nx * (1 - s.z) * this.parallax * vw + driftX + linearX;
+      const py = s.y + ny * (1 - s.z) * this.parallax * vh + driftY + linearY;
+
+      // وميض مبسط
+      const tw = (Math.sin(now * 0.001 + s.phi) * 0.3 + 0.7) * this.twinkle;
+      const alpha = Math.max(0.2, Math.min(1, s.a - tw));
+
+      // تأكد من أن النجمة داخل الشاشة
+      let starX = px;
+      let starY = py;
+
+      // تطويق النجمة إذا خرجت من الشاشة
+      if (starX < 0) starX += vw;
+      if (starX > vw) starX -= vw;
+      if (starY < 0) starY += vh;
+      if (starY > vh) starY -= vh;
+
+      // رسم نجمة مبسطة للأداء
+      this.drawOptimizedStar(ctx, starX, starY, s, alpha, now);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  drawOptimizedStar(ctx, x, y, star, alpha, now) {
+    const { r, z } = star;
+    const size = Math.max(0.3, r * (0.5 + (1 - z) * 0.6));
+
+    // ألوان مبسطة للنجوم
+    const starColors = ["#ffffff", "#b3d9ff", "#ffcc99"];
+    const colorIndex = Math.floor(star.z * starColors.length);
+    const starColor = starColors[colorIndex];
+
+    // وميض مبسط
+    const twinkle = Math.sin(now * 0.002 + star.phi) * 0.2 + 0.8;
+    const finalAlpha = alpha * twinkle;
+
+    ctx.globalAlpha = finalAlpha;
+    ctx.fillStyle = starColor;
+    ctx.beginPath();
+    ctx.arc(x, y, size, 0, Math.PI * 2);
+    ctx.fill();
+
+    // هالة بسيطة للنجوم الكبيرة فقط
+    if (size > 1.0 && finalAlpha > 0.5) {
+      ctx.globalAlpha = finalAlpha * 0.1;
+      ctx.beginPath();
+      ctx.arc(x, y, size * 2, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  drawRealisticStar(ctx, x, y, star, alpha, now) {
+    const { r, z } = star;
+    const size = Math.max(0.3, r * (0.5 + (1 - z) * 0.8));
+
+    // ألوان النجوم الواقعية
+    const starColors = [
+      "#ffffff", // أبيض
+      "#b3d9ff", // أزرق فاتح
+      "#ffcc99", // برتقالي فاتح
+      "#ffb3d9", // وردي فاتح
+      "#ccffcc", // أخضر فاتح
+      "#ffffcc", // أصفر فاتح
+    ];
+
+    // اختيار لون عشوائي للنجمة
+    const colorIndex = Math.floor(star.z * starColors.length);
+    const starColor = starColors[colorIndex];
+
+    // وميض النجمة
+    const twinkle = Math.sin(now * 0.003 + star.phi) * 0.3 + 0.7;
+    const finalAlpha = alpha * twinkle;
+
+    ctx.globalAlpha = finalAlpha;
+
+    // رسم النجمة الأساسية
+    ctx.fillStyle = starColor;
+    ctx.beginPath();
+    ctx.arc(x, y, size, 0, Math.PI * 2);
+    ctx.fill();
+
+    // رسم هالة حول النجوم الكبيرة
+    if (size > 1.2) {
+      const haloSize = size * 2.5;
+      const haloAlpha = finalAlpha * 0.15;
+
+      // إنشاء تدرج للهالة
+      const gradient = ctx.createRadialGradient(x, y, 0, x, y, haloSize);
+      gradient.addColorStop(0, starColor + "40");
+      gradient.addColorStop(0.5, starColor + "20");
+      gradient.addColorStop(1, starColor + "00");
+
+      ctx.globalAlpha = haloAlpha;
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(x, y, haloSize, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // رسم خطوط الضوء للنجوم الساطعة
+    if (size > 0.8 && finalAlpha > 0.6) {
+      ctx.globalAlpha = finalAlpha * 0.4;
+      ctx.strokeStyle = starColor;
+      ctx.lineWidth = 0.5;
+
+      // خطوط متقاطعة
+      ctx.beginPath();
+      ctx.moveTo(x - size * 3, y);
+      ctx.lineTo(x + size * 3, y);
+      ctx.moveTo(x, y - size * 3);
+      ctx.lineTo(x, y + size * 3);
+      ctx.stroke();
+    }
+
+    // تأثير التلألؤ للنجوم الصغيرة
+    if (size < 0.8) {
+      const sparkle = Math.sin(now * 0.005 + star.phi * 2) * 0.5 + 0.5;
+      if (sparkle > 0.7) {
+        ctx.globalAlpha = sparkle * finalAlpha;
+        ctx.fillStyle = "#ffffff";
+        ctx.beginPath();
+        ctx.arc(x, y, size * 1.5, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+  }
+
+  start() {
+    const loop = (t) => {
+      if (!this._hidden) {
+        this.draw(t);
+        this._raf = requestAnimationFrame(loop);
+      }
+    };
+    this._raf = requestAnimationFrame(loop);
+
+    // تحسين الأداء - إيقاف عند عدم الرؤية
+    document.addEventListener("visibilitychange", () => {
+      this._hidden = document.hidden;
+      if (!this._hidden && !this._raf) {
+        this.start();
+      }
+      if (this._hidden && this._raf) {
+        cancelAnimationFrame(this._raf);
+        this._raf = null;
+      }
+    });
+
+    // تحسين الأداء - تقليل السرعة عند التمرير بدلاً من الإيقاف
+    let scrollTimeout;
+    let isScrolling = false;
+    this.originalTargetFPS = this.targetFPS;
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!isScrolling) {
+          isScrolling = true;
+          this.targetFPS = 15; // تقليل FPS عند التمرير
+          this.frameInterval = 1000 / this.targetFPS;
+        }
+
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          isScrolling = false;
+          this.targetFPS = this.originalTargetFPS; // استعادة FPS الأصلي
+          this.frameInterval = 1000 / this.targetFPS;
+        }, 150);
+      },
+      { passive: true }
+    );
+  }
+}
+
+/* إنشاء طبقتين */
+const backCanvas = document.getElementById("stars-back");
+const frontCanvas = document.getElementById("stars-front");
+
+if (backCanvas && frontCanvas) {
+  const back = new Starfield(backCanvas, {
+    count: 150, // تقليل عدد النجوم للأداء
+    speed: 0.015, // تقليل السرعة للأداء
+    parallax: 0.03,
+    sizeRange: [0.8, 2.0],
+    twinkle: 0.06,
+  });
+
+  const front = new Starfield(frontCanvas, {
+    count: 300, // تقليل عدد النجوم للأداء
+    speed: 0.025, // تقليل السرعة للأداء
+    parallax: 0.08,
+    sizeRange: [0.5, 1.2],
+    twinkle: 0.12,
+  });
+
+  back.start();
+  front.start();
+
+  console.log("تم تشغيل نظام النجوم بنجاح!");
 } else {
-    avatarButton.src = avatarModal.children[1].src = "images/me-yellow.jpg";
-    $('body').style.setProperty("--color-base" , "var(--yellow)");
-}
-
-
-//Show main section
-root.innerHTML = sections[0]
-
-avatarButton.addEventListener('click' , () => {
-    avatarModal.toggleAttribute('close')
-    avatarModal.children[1].classList.remove('modal-close')
-    avatarModal.children[1].classList.add('modal-open')
-})
-avatarOverlay.addEventListener('click' , () => {
-    avatarModal.children[1].classList.remove('modal-open')
-    avatarModal.children[1].classList.add('modal-close')
-    setTimeout(() => { 
-        avatarModal.toggleAttribute('close')
-    } , 200)
-})
-menuLinks.forEach(element => {
-    element.addEventListener('click' , e => {
-        e.preventDefault();
-        if (e.target.classList.contains('active')) return;
-
-        $("[menu-links] a.active").classList.remove('active')
-        e.target.classList.add('active')
-        root.innerHTML = sections[parseInt(e.target.getAttribute('data-action'))]
-    })
-})
-
-function $ (selector) {
-    return document.querySelector(selector);
-}
-function _ (selector) {
-    return document.querySelectorAll(selector)
+  console.error("لم يتم العثور على عناصر الكانفاس للنجوم!");
 }

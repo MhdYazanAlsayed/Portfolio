@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚀 [EXPERIENCE_TITLE] - Yazan Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- Prism.js for syntax highlighting -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Background Effects -->
+    <div class="bg">
+      <div class="aurora"></div>
+      <div class="glows">
+        <div class="glow g1"></div>
+        <div class="glow g2"></div>
+        <div class="glow g3"></div>
+      </div>
+      <div class="grain"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container pt-5">
+      <!-- Experience Header -->
+      <div class="experience-header">
+        <div class="mb-4">
+          <div>
+            <h1 class="space-h6 mb-3 text-start fs-1">[EXPERIENCE_TITLE]</h1>
+          </div>
+          <div class="mb-4">
+            <span class="badge badge-cyan">[COMPANY_NAME]</span>
+            <span class="badge badge-gold">[LOCATION]</span>
+            <span class="badge badge-magenta">[JOB_TYPE]</span>
+            <span class="badge badge-lime">[DURATION]</span>
+          </div>
+          <div>
+            <a href="index.html" class="btn-lavender">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Content -->
+      <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-8">
+          <!-- Overview -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-info-circle"></i> Overview
+              </h3>
+            </div>
+            <div class="card-body">
+              <!-- REPLACE THIS SECTION WITH YOUR CONTENT -->
+              <p>Replace this with your experience overview...</p>
+
+              <!-- Example content structure -->
+              <h4>Project Background</h4>
+              <p>Describe the project background and context...</p>
+
+              <h4>My Role</h4>
+              <p>Describe your specific role and responsibilities...</p>
+
+              <h4>Key Challenges</h4>
+              <ul>
+                <li>Challenge 1</li>
+                <li>Challenge 2</li>
+                <li>Challenge 3</li>
+              </ul>
+
+              <h4>Solutions Implemented</h4>
+              <p>Describe the solutions you implemented...</p>
+            </div>
+          </div>
+
+          <!-- Code Snippets -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-code"></i> Code Highlights
+              </h3>
+              <p class="card-subtitle">
+                Key code snippets from this experience
+              </p>
+            </div>
+            <div class="card-body">
+              <!-- Code Snippet 1 -->
+              <div class="code-snippet code-snippet-md mb-4">
+                <div class="code-snippet-header">
+                  <h5 class="mb-2">
+                    <i class="fas fa-code"></i> [CODE_SNIPPET_1_TITLE]
+                  </h5>
+                  <p class="text-muted mb-3">[CODE_SNIPPET_1_DESCRIPTION]</p>
+                </div>
+                <div class="code-snippet-body">
+                  <div class="code-toolbar">
+                    <span class="language-badge badge badge-cyan"
+                      >[LANGUAGE]</span
+                    >
+                    <button
+                      class="btn btn-sm btn-outline-light copy-btn"
+                      onclick="copyCode(0)"
+                    >
+                      <i class="fas fa-copy"></i> Copy
+                    </button>
+                  </div>
+                  <pre
+                    class="line-numbers"
+                  ><code class="language-[LANGUAGE]">[CODE_SNIPPET_1_CONTENT]</code></pre>
+                </div>
+              </div>
+
+              <!-- Code Snippet 2 -->
+              <div class="code-snippet code-snippet-lg mb-4">
+                <div class="code-snippet-header">
+                  <h5 class="mb-2">
+                    <i class="fas fa-code"></i> [CODE_SNIPPET_2_TITLE]
+                  </h5>
+                  <p class="text-muted mb-3">[CODE_SNIPPET_2_DESCRIPTION]</p>
+                </div>
+                <div class="code-snippet-body">
+                  <div class="code-toolbar">
+                    <span class="language-badge badge badge-cyan"
+                      >[LANGUAGE]</span
+                    >
+                    <button
+                      class="btn btn-sm btn-outline-light copy-btn"
+                      onclick="copyCode(1)"
+                    >
+                      <i class="fas fa-copy"></i> Copy
+                    </button>
+                  </div>
+                  <pre
+                    class="line-numbers"
+                  ><code class="language-[LANGUAGE]">[CODE_SNIPPET_2_CONTENT]</code></pre>
+                </div>
+              </div>
+
+              <!-- Add more code snippets as needed -->
+            </div>
+          </div>
+
+          <!-- Technical Achievements -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-trophy"></i> Technical Achievements
+              </h3>
+            </div>
+            <div class="card-body">
+              <!-- Achievement 1 -->
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">[ACHIEVEMENT_1_TITLE]</h5>
+                    <p class="mb-0 text-muted">[ACHIEVEMENT_1_DESCRIPTION]</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Achievement 2 -->
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">[ACHIEVEMENT_2_TITLE]</h5>
+                    <p class="mb-0 text-muted">[ACHIEVEMENT_2_DESCRIPTION]</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Achievement 3 -->
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">[ACHIEVEMENT_3_TITLE]</h5>
+                    <p class="mb-0 text-muted">[ACHIEVEMENT_3_DESCRIPTION]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Details -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-project-diagram"></i> Project Details
+              </h3>
+            </div>
+            <div class="card-body">
+              <!-- REPLACE THIS SECTION WITH YOUR PROJECT DETAILS -->
+              <h4>Architecture Overview</h4>
+              <p>Describe the system architecture...</p>
+
+              <h4>Key Features</h4>
+              <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+              </ul>
+
+              <h4>Technologies Used</h4>
+              <p>List and describe the technologies...</p>
+
+              <h4>Results & Impact</h4>
+              <p>Describe the results and business impact...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+          <!-- Skills Used -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-tools"></i> Technologies Used
+              </h3>
+            </div>
+            <div class="card-body">
+              <!-- REPLACE THESE WITH YOUR ACTUAL SKILLS -->
+              <span class="badge badge-magenta badge-icon">
+                <i class="fas fa-code"></i> [TECH_1]
+              </span>
+              <span class="badge badge-cyan badge-icon">
+                <i class="fas fa-database"></i> [TECH_2]
+              </span>
+              <span class="badge badge-lime badge-icon">
+                <i class="fas fa-server"></i> [TECH_3]
+              </span>
+              <span class="badge badge-gold badge-icon">
+                <i class="fas fa-cloud"></i> [TECH_4]
+              </span>
+              <span class="badge badge-holographic badge-icon">
+                <i class="fas fa-rocket"></i> [TECH_5]
+              </span>
+            </div>
+          </div>
+
+          <!-- Project Stats -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-chart-line"></i> Impact Metrics
+              </h3>
+            </div>
+            <div class="card-body">
+              <!-- Metric 1 -->
+              <div class="metric-item mb-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="metric-label">[METRIC_1_LABEL]</span>
+                  <span class="metric-value badge badge-lime"
+                    >[METRIC_1_VALUE]</span
+                  >
+                </div>
+                <div class="progress mt-2" style="height: 4px">
+                  <div
+                    class="progress-bar bg-lime"
+                    style="width: [METRIC_1_PERCENTAGE]%"
+                  ></div>
+                </div>
+              </div>
+
+              <!-- Metric 2 -->
+              <div class="metric-item mb-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="metric-label">[METRIC_2_LABEL]</span>
+                  <span class="metric-value badge badge-gold"
+                    >[METRIC_2_VALUE]</span
+                  >
+                </div>
+                <div class="progress mt-2" style="height: 4px">
+                  <div
+                    class="progress-bar bg-gold"
+                    style="width: [METRIC_2_PERCENTAGE]%"
+                  ></div>
+                </div>
+              </div>
+
+              <!-- Metric 3 -->
+              <div class="metric-item mb-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="metric-label">[METRIC_3_LABEL]</span>
+                  <span class="metric-value badge badge-cyan"
+                    >[METRIC_3_VALUE]</span
+                  >
+                </div>
+                <div class="progress mt-2" style="height: 4px">
+                  <div
+                    class="progress-bar bg-cyan"
+                    style="width: [METRIC_3_PERCENTAGE]%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Projects -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-project-diagram"></i> Related Projects
+              </h3>
+            </div>
+            <div class="card-body">
+              <!-- Related Project 1 -->
+              <div class="related-project mb-3">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-folder text-primary me-2"></i>
+                  <div>
+                    <h6 class="mb-1">[PROJECT_1_NAME]</h6>
+                    <small class="text-muted">[PROJECT_1_DESCRIPTION]</small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Related Project 2 -->
+              <div class="related-project mb-3">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-folder text-primary me-2"></i>
+                  <div>
+                    <h6 class="mb-1">[PROJECT_2_NAME]</h6>
+                    <small class="text-muted">[PROJECT_2_DESCRIPTION]</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-calendar"></i> Timeline
+              </h3>
+            </div>
+            <div class="card-body">
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <h6>[TIMELINE_1_TITLE]</h6>
+                    <small class="text-muted">[TIMELINE_1_DATE]</small>
+                    <p class="mb-0">[TIMELINE_1_DESCRIPTION]</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <h6>[TIMELINE_2_TITLE]</h6>
+                    <small class="text-muted">[TIMELINE_2_DATE]</small>
+                    <p class="mb-0">[TIMELINE_2_DESCRIPTION]</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <h6>[TIMELINE_3_TITLE]</h6>
+                    <small class="text-muted">[TIMELINE_3_DATE]</small>
+                    <p class="mb-0">[TIMELINE_3_DESCRIPTION]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <script>
+      // Copy code function
+      function copyCode(index) {
+        const codeElement = document.querySelectorAll(".code-snippet pre code")[
+          index
+        ];
+        const text = codeElement.textContent;
+
+        navigator.clipboard.writeText(text).then(() => {
+          // Show success feedback
+          const button = document.querySelectorAll(".copy-btn")[index];
+          const originalText = button.innerHTML;
+          button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          button.classList.add("btn-success");
+          button.classList.remove("btn-outline-light");
+
+          setTimeout(() => {
+            button.innerHTML = originalText;
+            button.classList.remove("btn-success");
+            button.classList.add("btn-outline-light");
+          }, 2000);
+        });
+      }
+
+      // Initialize Prism.js after DOM is loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        Prism.highlightAll();
+      });
+    </script>
+  </body>
+</html>

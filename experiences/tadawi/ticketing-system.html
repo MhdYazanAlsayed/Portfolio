@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚀 Yazan Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+
+    <!-- Prism.js for syntax highlighting -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <!-- طبقة نجوم خلفية -->
+    <canvas
+      id="stars-back"
+      class="stars stars--back"
+      aria-hidden="true"
+    ></canvas>
+
+    <!-- طبقة نجوم أمامية -->
+    <canvas
+      id="stars-front"
+      class="stars stars--front"
+      aria-hidden="true"
+    ></canvas>
+  
+    <!-- Background Effects -->
+    <div class="bg">
+      <div class="aurora"></div>
+      <div class="glows">
+        <div class="glow g1"></div>
+        <div class="glow g2"></div>
+        <div class="glow g3"></div>
+      </div>
+      <div class="grain"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container pt-5">
+      <!-- Experience Header -->
+      <div class="experience-header">
+        <div class="mb-4">
+          <div>
+            <h1 class="space-h6 mb-3 text-start fs-1">Complaints\Ticketing System</h1>
+          </div>
+          <div class="mb-4">
+            <span class="badge badge-cyan">Full Stack Web Developer</span>
+            <span class="badge badge-gold">Tadawi Group</span>
+            <span class="badge badge-magenta">FullTime</span>
+            <span class="badge badge-lime">2022 - 2024</span>
+          </div>
+          <div>
+            <a href="../../index.html#ticketing-system" class="btn-lavender">Back</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Content -->
+      <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-12">
+          <!-- Overview -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-info-circle"></i> Overview
+              </h3>
+            </div>
+            <div class="card-body">
+                <article>
+                    <h3>Customer Complaints Management System</h3>
+                    <p>
+                        This system was designed and developed end-to-end by me for the Customer Service department at
+                        <strong>Tadawi Group</strong>. Its purpose is to centralize the intake, tracking, and resolution of
+                        complaints from visitors and patients—covering service quality, cleanliness, staff conduct, and other issues—
+                        and to ensure that no complaint is lost or forgotten.
+                    </p>
+                  
+                    <section>
+                      <h3>Purpose and Scope</h3>
+                      <p>
+                        The system enables customer service staff to register complaints quickly and accurately, then follow them
+                        through their full lifecycle across all company branches. It standardizes how complaints are captured,
+                        prioritized, escalated, and resolved, providing managers with visibility over performance at both branch and
+                        group level.
+                      </p>
+                    </section>
+                  
+                    <section>
+                      <h3>How It Improves Response Quality</h3>
+                      <p>
+                        By replacing ad-hoc or manual workflows with a structured electronic process, the platform:
+                      </p>
+                      <ul>
+                        <li>Prevents loss or duplication of complaints through a single source of truth.</li>
+                        <li>Tracks complaint status from creation to closure with clear timestamps and owners.</li>
+                        <li>Sends automated alerts and reminders when resolution deadlines approach or are missed.</li>
+                        <li>Supports priority-based handling to reduce time-to-resolution for critical issues.</li>
+                      </ul>
+                    </section>
+                  
+                    <section>
+                      <h3>Priority and Escalation</h3>
+                      <p>
+                        Each complaint has a priority level that drives its expected resolution time. For example, complaints marked as
+                        <em>Critical</em> must be addressed within a few hours. If a deadline is exceeded, the system automatically
+                        escalates the case to the appropriate managers, continuing escalation until the issue is resolved or its status
+                        is explicitly changed (e.g., “Closed” or “Unresolved”).
+                      </p>
+                    </section>
+                  
+                    <section>
+                      <h3>Visibility for Staff and Management</h3>
+                      <p>
+                        The platform provides role-appropriate views for both agents and managers to monitor workload and outcomes across
+                        all branches. Managers can review live dashboards and scheduled reports to evaluate response effectiveness,
+                        identify recurring issues, and measure overall customer satisfaction efforts.
+                      </p>
+                    </section>
+                  
+                    <section>
+                      <h3>Position in the Enterprise Ecosystem</h3>
+                      <p>
+                        This system is part of a broader, integrated operations suite at Tadawi Group. While this overview focuses on
+                        the complaints module, it aligns with other enterprise components that manage the company’s day-to-day
+                        functions. Additional modules will be referenced later.
+                      </p>
+                    </section>
+                  </article>
+            </div>
+          </div>
+
+          <!-- Functional Details -->
+          <div class="card mb-4">
+            <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-info-circle"></i> Functional Details
+                </h3>
+            </div>
+            <div class="card-body">
+                <article>
+                    <p>
+                        Staff can perform a range of actions based on permissions granted by the company-wide
+                        <strong>Identity Server</strong> (centralized users & roles). This module is part of an integrated enterprise system.
+                    </p>
+                  
+                    <section>
+                      <h3>Permissions and Access Control</h3>
+                      <ul>
+                        <li>Role-based access defined centrally via Identity Server.</li>
+                        <li>Each action (create, assign, escalate, close, reopen, configure) is permission-gated.</li>
+                        <li>Branch scope and department scope enforced per user.</li>
+                      </ul>
+                    </section>
+                  
+                    <section>
+                      <h3>Complaint Intake</h3>
+                      <p>When adding a new complaint, the staff member records:</p>
+                      <ul>
+                        <li><strong>Branch</strong> (auto-derived from the employee’s branch) + <strong>Department</strong> + <strong>Clinic</strong>.</li>
+                        <li><strong>Intake Channel</strong>:
+                          <ul>
+                            <li>Phone call</li>
+                            <li>Social media</li>
+                            <li>Walk-in at branch</li>
+                          </ul>
+                        </li>
+                        <li><strong>Complaint Type</strong>:
+                          <ul>
+                            <li>Administrative</li>
+                            <li>Medical</li>
+                            <li>Service</li>
+                          </ul>
+                        </li>
+                        <li><strong>Priority</strong>:
+                          <ul>
+                            <li>Critical</li>
+                            <li>Normal</li>
+                            <li>Medium</li>
+                          </ul>
+                        </li>
+                        <li><strong>Detailed Description</strong> (rephrased clearly by the agent to capture the incident precisely).</li>
+                      </ul>
+                    </section>
+                  
+                    <section>
+                      <h3>Assignment, Ownership, and Escalation Trail</h3>
+                      <ul>
+                        <li>Each complaint is assigned to a responsible staff member for end-to-end follow-up.</li>
+                        <li>An assignment log records everyone who worked on the complaint, including timestamps.</li>
+                        <li>When a case is escalated, the system appends the new assignee and escalation reason to the trail.</li>
+                      </ul>
+                    </section>
+                  
+                    <section>
+                      <h3>Attachments and Comments</h3>
+                      <ul>
+                        <li>Attach supporting assets (images, PDFs, other files) to clarify the issue.</li>
+                        <li>Threaded comments allow clarifications and notes; files can be attached within comments as well.</li>
+                      </ul>
+                    </section>
+                  
+                    <section>
+                      <h3>Timeline History</h3>
+                      <ul>
+                        <li>Every status change is recorded with exact date and time.</li>
+                        <li>Audit-ready trail includes creator, assignee changes, escalations, and closure details.</li>
+                      </ul>
+                    </section>
+                  
+                    <section>
+                      <h3>Resolution and Closure</h3>
+                      <p>Upon resolution, the agent must document:</p>
+                      <ul>
+                        <li><strong>Actions Taken</strong> (what steps were executed?)</li>
+                        <li><strong>Final Solution</strong> (what solved it?)</li>
+                        <li><strong>Corrective Plan</strong> (preventive/long-term fixes)</li>
+                      </ul>
+                      <p>If resolution fails, the <strong>failure reason</strong> must be recorded in detail for managerial review.</p>
+                    </section>
+                  
+                    <section>
+                      <h3>Reopening Closed Complaints</h3>
+                      <ul>
+                        <li>A resolved case can be reopened if the customer remains dissatisfied.</li>
+                        <li>Status resets to the beginning while preserving the full history, comments, and attachments.</li>
+                      </ul>
+                    </section>
+                  
+                    <section>
+                      <h3>Configuration and SLA Rules</h3>
+                      <ul>
+                        <li>Admin interfaces to manage:
+                          <ul>
+                            <li>Complaint <strong>Types</strong></li>
+                            <li>Complaint <strong>Priorities</strong></li>
+                          </ul>
+                        </li>
+                        <li>Per type/priority, define an <strong>SLA (hours)</strong> for expected resolution.</li>
+                        <li>If SLA is exceeded, the system <strong>auto-updates status</strong>, <strong>escalates</strong>, and <strong>notifies managers</strong> (in-app and email).</li>
+                      </ul>
+                    </section>
+                  
+                    <section>
+                      <h3>Organizational Hierarchy for Smart Escalations</h3>
+                      <ul>
+                        <li>Escalation paths follow the company’s hierarchical structure of employees.</li>
+                        <li>Smart notifications and multi-level escalations target the right managers at the right time.</li>
+                        <li>Escalation continues until the complaint is resolved or formally closed as unresolved.</li>
+                      </ul>
+                    </section>
+                  
+                    <footer>
+                      <p>
+                        All features integrate with the central Identity Server to ensure consistent user management,
+                        security, and role-based access across the company’s systems.
+                      </p>
+                    </footer>
+                </article>
+            </div>
+          </div>
+
+          <!-- Code Snippets -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-code"></i> Code Highlights
+              </h3>
+              <p class="card-subtitle">
+                Key code snippets from this experience
+              </p>
+              <p class="text-danger">
+                I'm sorry that I can't share full code because of NDA.
+              </p>
+            </div>
+            <div class="card-body">
+                <!-- Create Ticket -->
+                <div class="code-snippet code-snippet-lg mb-4">
+                    <div class="code-snippet-header">
+                        <h5 class="mb-2">
+                        <i class="fas fa-code"></i> CreateTicketCommand.cs & CreateTicketValidator.cs & CreateTicketHandler.cs
+                    </h5>
+                  
+                    </div>
+                    <div class="code-snippet-body">
+                        <div class="code-toolbar">
+                        <span class="language-badge badge badge-cyan">C#</span>
+                        <button
+                            class="btn btn-sm btn-outline-light copy-btn"
+                            onclick="copyCode(0)"
+                        >
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                        </div>
+                        <pre
+                        class="line-numbers"
+                        ><code class="language-csharp">
+
+    public sealed record CreateTicketCommand : IRequest< int >
+    {
+        public string Title { get; init; } = default!;
+        public TicketMethod Method { get; init; }
+        public int TypeId { get; init; }
+        public int? PriorityId { get; init; }
+        public int? CategoryId { get; init; }
+        public int? ClinicalId { get; init; }
+        public int? ResponsibleId { get; init; }
+        public string Description { get; init; } = default!;
+    
+        // Person selector (either PersonId OR full person info)
+        public int? PersonId { get; init; }
+        public string? PersonFullName { get; init; }
+        public string? PersonIdNumber { get; init; }
+        public string? PersonPhoneNumber { get; init; }
+        public string? PersonEmail { get; init; }
+    }
+
+    public sealed class CreateTicketCommandValidator : AbstractValidator< CreateTicketCommand >
+    {
+        public CreateTicketCommandValidator()
+        {
+            RuleFor(x => x.Title).NotEmpty().MinimumLength(3);
+            RuleFor(x => x.Description).NotEmpty().MinimumLength(10);
+            RuleFor(x => x.TypeId).GreaterThan(0);
+            RuleFor(x => x.Method).IsInEnum();
+    
+            RuleFor(x => x)
+                .Must(HasValidPersonSelector)
+                .WithMessage("Provide either PersonId or full person details (FullName, IdNumber, PhoneNumber).");
+    
+            When(x => !string.IsNullOrWhiteSpace(x.PersonEmail), () =>
+            {
+                RuleFor(x => x.PersonEmail!).EmailAddress();
+            });
+        }
+    
+        private static bool HasValidPersonSelector(CreateTicketCommand cmd)
+        {
+            var hasId = cmd.PersonId.HasValue;
+            var hasFull =
+                !string.IsNullOrWhiteSpace(cmd.PersonFullName) &&
+                !string.IsNullOrWhiteSpace(cmd.PersonIdNumber) &&
+                !string.IsNullOrWhiteSpace(cmd.PersonPhoneNumber);
+    
+            return hasId || hasFull;
+        }
+    }
+
+    public sealed class CreateTicketCommandHandler : IRequestHandler< CreateTicketCommand, int >
+    {
+        private readonly IValidator< CreateTicketCommand > _validator;
+        private readonly IUserService _userService;
+        private readonly AppDbContext _db; //
+
+        public CreateTicketCommandHandler(
+            AppDbContext db,
+            IValidator< CreateTicketCommand > validator,
+            IUserService userService)
+        {
+            _db = db;
+            _validator = validator;
+            _userService = userService;
+        }
+
+        public async Task< int > Handle(CreateTicketCommand request, CancellationToken ct)
+        {
+            await _validator.ValidateAndThrowAsync(request, ct);
+
+            await EnsureReferencesExistAsync(request, ct);
+
+            // Get creator from the current authenticated user (IUserService)
+            var currentUser = await _userService.GetCurrentUserAsync();
+            if (currentUser is null)
+                throw new NullReferenceException("User was null !");
+
+            var personId = await ResolvePersonIdAsync(request, ct);
+            var nextNumber = await GetNextTicketNumberAsync(request.BranchId, ct);
+
+            var dto = new CreateTicketDto
+            {
+                Title = request.Title,
+                Method = request.Method,
+                SectionId = request.SectionId,
+                TypeId = request.TypeId,
+                Description = request.Description,
+                ResponsibleId = request.ResponsibleId,
+                PriorityId = request.PriorityId,
+                CategoryId = request.CategoryId,
+                ClinicalId = request.ClinicalId,
+                BranchId = request.BranchId,
+                Number = nextNumber,
+                CreatorId = currentUser.Id,
+                PersonId = personId
+            };
+
+            var ticket = Ticket.Create(dto);
+
+            // Add domain event to notify the assigned employee by email after SaveChanges completes.
+            // This event will be picked by a handler (e.g., outbox/dispatcher) to send the email.
+            if (ticket.ResponsibleId is int assignedId)
+            {
+                ticket.AddDomainEvent(new SendTicketCreationNotifyToEmployee(assignedId));
+            }
+
+            _db.Tickets.Add(ticket);
+
+            try 
+            {
+                await _db.SaveChangesAsync(ct);
+            }
+            catch(DbUpdateException ex)
+            {
+                throw new ValidationException("Invalid reference or duplicate data detected. Please verify IDs and uniqueness.", ex);
+            }
+           
+
+            return ticket.Id;
+        }
+
+        // This to create person if he doesn't exist.
+        private async Task< int > ResolvePersonIdAsync(CreateTicketCommand req, CancellationToken ct)
+        {
+            if (req.PersonId is int pid)
+                return pid;
+
+            var newPerson = new Person
+            {
+                FullName = req.PersonFullName!.Trim(),
+                IdNumber = req.PersonIdNumber!.Trim(),
+                PhoneNumber = req.PersonPhoneNumber!.Trim(),
+                Email = string.IsNullOrWhiteSpace(req.PersonEmail) ? null : req.PersonEmail!.Trim()
+            };
+
+            _db.Persons.Add(newPerson);
+            await _db.SaveChangesAsync(ct);
+            return newPerson.Id;
+        }
+
+        private Task<Person?> FindExistingPersonAsync(CreateTicketCommand req, CancellationToken ct)
+        {
+            var idNumber = req.PersonIdNumber!.Trim();
+            var email = (req.PersonEmail ?? string.Empty).Trim();
+            var phone = req.PersonPhoneNumber!.Trim();
+
+            return _db.Persons
+                .Where(p =>
+                    p.IdNumber == idNumber ||
+                    (!string.IsNullOrEmpty(email) && p.Email == email) ||
+                    p.PhoneNumber == phone)
+                .OrderByDescending(p => p.IdNumber == idNumber)
+                .ThenByDescending(p => !string.IsNullOrEmpty(email) && p.Email == email)
+                .FirstOrDefaultAsync(ct);
+        }
+
+        private async Task<int> GetNextTicketNumberAsync(int branchId, CancellationToken ct)
+        {
+            var max = await _db.Tickets
+                .Where(t => t.BranchId == branchId)
+                .Select(t => (int?)t.Number)
+                .MaxAsync(ct);
+
+            return (max ?? 0) + 1;
+        }
+    }
+
+        
+                    
+                        </code></pre>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <!-- Business Achievements -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-trophy"></i> Business Achievements
+              </h3>
+            </div>
+            <div class="card-body">
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">Improved Customer Satisfaction</h5>
+                    <p class="mb-0 text-muted">By centralizing all complaints and tracking their lifecycle, the system ensured no complaint was forgotten. This transparency boosted trust and satisfaction among patients and visitors.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">Faster Resolution Times</h5>
+                    <p class="mb-0 text-muted">With SLA-driven escalation and automated alerts, critical complaints were handled within hours instead of days, reducing negative impact on operations.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">Increased Accountability</h5>
+                    <p class="mb-0 text-muted">Every action (assignment, escalation, closure) was recorded in a timeline with timestamps and responsible employees, making accountability clear and measurable.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">Enhanced Managerial Oversight</h5>
+                    <p class="mb-0 text-muted">Branch and group managers gained real-time visibility through dashboards and reports, helping them monitor service quality and staff performance across all locations.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">Smarter Escalation & Reduced Risk</h5>
+                    <p class="mb-0 text-muted">By embedding the organizational hierarchy, issues automatically reached the right decision-makers, preventing bottlenecks and avoiding costly delays.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">Data-Driven Decision Making</h5>
+                    <p class="mb-0 text-muted">Reports revealed recurring complaint types and high-risk areas (e.g., specific branches or departments), enabling management to address root causes with targeted initiatives.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">Efficiency in Operations</h5>
+                    <p class="mb-0 text-muted">Reopening workflow, attachments, and comment threads reduced back-and-forth between staff and customers, saving time and effort in resolving disputes.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="achievement-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-star text-warning me-2 mt-1"></i>
+                  <div>
+                    <h5 class="mb-1">Stronger Brand Image</h5>
+                    <p class="mb-0 text-muted">Providing professional handling of complaints demonstrated Tadawi Group’s commitment to patient care, reinforcing the brand as customer-focused and trustworthy.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3 class="card-title">
+                  🚀 Vision for Complaint\Ticketing Platform
+              </h3>
+            </div>
+
+            <div class="card-body">
+                <article>
+                    <p>
+                    A forward-looking roadmap to scale customer-complaints operations, elevate service quality,
+                    and empower both customers and staff through automation, analytics, and clear accountability.
+                    </p>
+                  
+                    <section>
+                      <h3>Scalability First</h3>
+                      <ul>
+                        <li>Design for horizontal growth to handle rising complaint volumes without performance degradation.</li>
+                        <li>Decouple services and use queues for burst handling and graceful degradation.</li>
+                      </ul>
+                    </section>
+                  
+                    <section>
+                      <h3>Customer Web Portal</h3>
+                      <ul>
+                        <li>Self-service portal for submitting and tracking complaints without contacting the call center.</li>
+                        <li>Personal dashboard showing statuses, timelines, and history across all submitted cases.</li>
+                      </ul>
+                    </section>
+                  
+                    <section>
+                      <h3>AI-Powered Assistance</h3>
+                      <ul>
+                        <li>Auto-detect sensitivity and categorize complaints to speed up routing.</li>
+                        <li>Spam and duplicate detection to reduce noise and operational load.</li>
+                        <li>AI supports staff to work faster and smarter; it does not replace human roles.</li>
+                      </ul>
+                    </section>
+                  
+                    <section>
+                      <h3>Employee Performance Ratings</h3>
+                      <ul>
+                        <li>Score employees based on resolution speed and outcomes relative to SLA and sensitivity.</li>
+                        <li>Rewards and recognition to incentivize great service and continuous improvement.</li>
+                      </ul>
+                    </section>
+                  
+                    <section>
+                      <h3>Predictive Analytics</h3>
+                      <ul>
+                        <li>Identify recurring issues and forecast emerging problems before they impact customers.</li>
+                        <li>Recommend preventive actions to reduce future complaint volume and cost.</li>
+                      </ul>
+                    </section>
+                  
+                    <section>
+                      <h3>Management Insights</h3>
+                      <ul>
+                        <li>Daily, data-driven recommendations to improve service quality and operational efficiency.</li>
+                        <li>KPI snapshots across branches to guide strategic decisions.</li>
+                      </ul>
+                    </section>
+                  
+                    <section>
+                      <h3>Multi-Channel Integration</h3>
+                      <ul>
+                        <li>Unify inputs from phone, web, email, chatbots, and social media into a single workflow.</li>
+                        <li>Consistent triage and routing regardless of intake channel.</li>
+                      </ul>
+                    </section>
+                  
+                    <section>
+                      <h3>Mobile Accessibility</h3>
+                      <ul>
+                        <li>Mobile apps for customers to submit and track complaints on the go.</li>
+                        <li>Staff apps for instant notifications and faster field responses.</li>
+                      </ul>
+                    </section>
+                  
+                    <section>
+                      <h3>Localization &amp; Multilingual Support</h3>
+                      <ul>
+                        <li>Serve diverse communities with localized content and multi-language UIs.</li>
+                        <li>Ensure inclusive access across all branches and regions.</li>
+                      </ul>
+                    </section>
+                  </article>
+                  
+            </div>
+          </div>
+
+          <!-- Skills Used -->
+          <div class="card mb-4">
+            <div class="card-header">
+            <h3 class="card-title">
+                <i class="fas fa-tools"></i> Technologies Used
+            </h3>
+            </div>
+            <div class="card-body">
+              <!-- REPLACE THESE WITH YOUR ACTUAL SKILLS -->
+              <span class="badge badge-gold badge-icon">
+                <i class="fas fa-code"></i> Asp.Net Core
+              </span>
+              <span class="badge badge-magenta badge-icon">
+                  <i class="fas fa-code"></i> C#
+              </span>
+              <span class="badge badge-cyan badge-icon">
+                  <i class="fas fa-database"></i> SqlServer & Ef_Core
+              </span>
+              <span class="badge badge-holographic badge-icon">
+                  <i class="fas fa-rocket"></i> React js 
+              </span>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <script src="../../js/main.js"></script>
+    <script>
+      // Debug: Check if stars are working
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('QServs page loaded');
+        const backCanvas = document.getElementById('stars-back');
+        const frontCanvas = document.getElementById('stars-front');
+        console.log('Back canvas:', backCanvas);
+        console.log('Front canvas:', frontCanvas);
+        
+        if (backCanvas && frontCanvas) {
+          console.log('Canvas elements found, stars should be working');
+          
+          // Test: Draw some simple stars manually
+          setTimeout(() => {
+            const ctx = backCanvas.getContext('2d');
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.arc(100, 100, 2, 0, Math.PI * 2);
+            ctx.fill();
+            console.log('Test star drawn');
+          }, 1000);
+        } else {
+          console.error('Canvas elements not found!');
+        }
+      });
+
+      // Copy code function
+      function copyCode(index) {
+        const codeElement = document.querySelectorAll(".code-snippet pre code")[
+          index
+        ];
+        const text = codeElement.textContent;
+
+        navigator.clipboard.writeText(text).then(() => {
+          // Show success feedback
+          const button = document.querySelectorAll(".copy-btn")[index];
+          const originalText = button.innerHTML;
+          button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          button.classList.add("btn-success");
+          button.classList.remove("btn-outline-light");
+
+          setTimeout(() => {
+            button.innerHTML = originalText;
+            button.classList.remove("btn-success");
+            button.classList.add("btn-outline-light");
+          }, 2000);
+        });
+      }
+
+      // Initialize Prism.js after DOM is loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        Prism.highlightAll();
+      });
+    </script>
+  </body>
+</html>
