@@ -20,15 +20,12 @@ class Starfield {
     this.vh = innerHeight;
     this.dpr = Math.min(devicePixelRatio || 1, 1.5); // تقليل DPR للأداء
     this.stars = [];
-    this.mx = this.vw / 2;
-    this.my = this.vh / 2;
-    this.tx = this.mx;
-    this.ty = this.my;
+    // Mouse position variables removed for performance optimization
 
-    // تحسينات الأداء
+    // تحسينات الأداء - تقليل FPS للنجوم الثابتة
     this.frameCount = 0;
     this.lastFrameTime = 0;
-    this.targetFPS = 30; // تقليل FPS للأداء
+    this.targetFPS = 15; // تقليل FPS أكثر للنجوم الثابتة
     this.frameInterval = 1000 / this.targetFPS;
 
     this.resize();
@@ -37,14 +34,7 @@ class Starfield {
     this._hidden = false;
 
     addEventListener("resize", () => this.onResize());
-    // addEventListener(
-    //   "pointermove",
-    //   (e) => {
-    //     this.tx = e.clientX;
-    //     this.ty = e.clientY;
-    //   },
-    //   { passive: true }
-    // );
+    // Mouse movement removed for performance optimization - stars are now static
   }
 
   rand(min, max) {
@@ -85,8 +75,9 @@ class Starfield {
   }
 
   draw(now) {
-    // تحكم في معدل الإطارات للأداء
-    if (now - this.lastFrameTime < this.frameInterval) {
+    // تحكم في معدل الإطارات للأداء - تقليل التحديث للنجوم الثابتة
+    if (now - this.lastFrameTime < this.frameInterval * 2) {
+      // تقليل معدل التحديث للنصف
       return;
     }
     this.lastFrameTime = now;
@@ -95,42 +86,14 @@ class Starfield {
     // خلفية شفافة: نمسح فقط
     ctx.clearRect(0, 0, vw, vh);
 
-    // لَير بارالاكس لطيف
-    this.mx = this.lerp(this.mx, this.tx, 0.06);
-    this.my = this.lerp(this.my, this.ty, 0.06);
-    const nx = (this.mx - vw / 2) / vw;
-    const ny = (this.my - vh / 2) / vh;
-
-    // حساب القيم المشتركة مرة واحدة
-    const time = now * 0.005; // تقليل سرعة الحركة
-    const speedMultiplier = this.speed * 50; // تقليل مضاعف السرعة
-
     for (const s of stars) {
-      // حركة مبسطة للنجوم
-      const driftX = Math.sin(time * 0.2 + s.z * 8) * speedMultiplier;
-      const driftY = Math.cos(time * 0.15 + s.z * 10) * speedMultiplier;
+      // استخدام المواضع الأصلية للنجوم بدون حركة
+      const starX = s.x;
+      const starY = s.y;
 
-      // حركة خطية مبسطة
-      const linearX = ((time * this.speed * 60 * (1 - s.z)) % (vw * 2)) - vw;
-      const linearY = ((time * this.speed * 30 * (1 - s.z)) % (vh * 2)) - vh;
-
-      // بارالاكس حسب العمق + الحركة التلقائية
-      const px = s.x + nx * (1 - s.z) * this.parallax * vw + driftX + linearX;
-      const py = s.y + ny * (1 - s.z) * this.parallax * vh + driftY + linearY;
-
-      // وميض مبسط
+      // وميض مبسط فقط (بدون حركة)
       const tw = (Math.sin(now * 0.001 + s.phi) * 0.3 + 0.7) * this.twinkle;
       const alpha = Math.max(0.2, Math.min(1, s.a - tw));
-
-      // تأكد من أن النجمة داخل الشاشة
-      let starX = px;
-      let starY = py;
-
-      // تطويق النجمة إذا خرجت من الشاشة
-      if (starX < 0) starX += vw;
-      if (starX > vw) starX -= vw;
-      if (starY < 0) starY += vh;
-      if (starY > vh) starY -= vh;
 
       // رسم نجمة مبسطة للأداء
       this.drawOptimizedStar(ctx, starX, starY, s, alpha, now);
@@ -295,19 +258,19 @@ const frontCanvas = document.getElementById("stars-front");
 
 if (backCanvas && frontCanvas) {
   const back = new Starfield(backCanvas, {
-    count: 150, // تقليل عدد النجوم للأداء
-    speed: 0.015, // تقليل السرعة للأداء
-    parallax: 0.03,
+    count: 100, // تقليل عدد النجوم أكثر للأداء
+    speed: 0, // إيقاف الحركة تماماً
+    parallax: 0, // إيقاف البارالاكس
     sizeRange: [0.8, 2.0],
-    twinkle: 0.06,
+    twinkle: 0.08, // زيادة الوميض قليلاً للتعويض
   });
 
   const front = new Starfield(frontCanvas, {
-    count: 300, // تقليل عدد النجوم للأداء
-    speed: 0.025, // تقليل السرعة للأداء
-    parallax: 0.08,
+    count: 200, // تقليل عدد النجوم أكثر للأداء
+    speed: 0, // إيقاف الحركة تماماً
+    parallax: 0, // إيقاف البارالاكس
     sizeRange: [0.5, 1.2],
-    twinkle: 0.12,
+    twinkle: 0.15, // زيادة الوميض قليلاً للتعويض
   });
 
   back.start();
